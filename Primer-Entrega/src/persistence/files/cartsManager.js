@@ -20,7 +20,23 @@ export class CartsManager{
           throw error;
         }
       }
-
+      //metodo que busca por id
+      async getCartsById(id) {
+        try {
+          //leo el archivo
+          const carts = await this.getCarts();
+          //busco por id
+          const cartFound = carts.find((prod) => prod.id === id);
+          if (cartFound) {
+            return cartFound;
+          } else {
+            throw new Error("Carrito no encontrado");
+          }
+        } catch (error) {
+          console.log(error.message);
+          throw new Error("El Carrito es inexistente");
+        }
+      }
       //metodo que lee y crea los carritos
       async createCart() {
         try {
