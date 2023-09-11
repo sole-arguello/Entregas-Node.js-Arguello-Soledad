@@ -62,4 +62,15 @@ router.put('/:pid', async (req, res) => {
     }
 })
 
+//http://localhost:8080/api/products/numeroEliminar
+router.delete('/:pid', async (req, res) => {
+    try {
+        const productId = parseInt(req.params.pid)
+        const deletedProduct = await productsService.deleteProduct(productId)
+        console.log({deletedProduct});
+        res.json({ message: 'El producto eliminado: ', data: deletedProduct })
+    } catch (error) {
+        res.json({status: 'error', message: error.message})
+    } 
+})
 export { router as productsRoutes};
