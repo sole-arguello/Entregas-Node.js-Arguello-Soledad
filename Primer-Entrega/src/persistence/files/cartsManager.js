@@ -20,6 +20,38 @@ export class CartsManager{
           throw error;
         }
       }
+
+      //metodo que lee y crea los carritos
+      async createCart() {
+        try {
+          // Lee los carritos existentes
+          const carts = await this.getCarts();
+    
+          // Crea un nuevo ID autoincremental para el carrito
+          let newId;
+          if (carts.length === 0) {
+            newId = 1;
+          } else {
+            newId = carts[carts.length - 1].id + 1;
+          }
+          //creo el carrito con el id y el producto vacio
+          const newCart = {
+            id: newId,
+            products: [],
+          };
+          carts.push(newCart);
+    
+          // Sobrescribe el JSON con los carritos actualizados
+          await fs.promises.writeFile(
+            this.pathFile,
+            JSON.stringify(carts, null, "\t")
+          );
+          //retorno el carrito cargado
+          return newCart;
+        } catch (error) {
+          throw error;
+        }
+      } 
        
 }
 
