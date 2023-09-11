@@ -13,4 +13,14 @@ router.get("/", async (req, res) => {
   }
 });
 
+//http://localhost:8080/api/carts para craer carritos
+router.post("/", async (req, res) => {
+    try {
+      const newCart = await cartsService.createCart();
+      res.json({ message: "Carrito creado", data: newCart });
+    } catch (error) {
+      res.json({ status: "error", message: error.message });
+    }
+  });
+
 export { router as cartsRouter };
