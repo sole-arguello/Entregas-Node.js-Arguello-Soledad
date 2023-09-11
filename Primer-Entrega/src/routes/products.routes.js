@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { productsService } from "../persistence/index.js";
 
 const router = Router();
 
@@ -73,4 +74,5 @@ router.delete('/:pid', async (req, res) => {
         res.json({status: 'error', message: error.message})
     } 
 })
+
 export { router as productsRoutes};
