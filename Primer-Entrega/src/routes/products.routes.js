@@ -20,6 +20,16 @@ router.get('/', async (req, res) => {//ruta para obtener todos los productos
     }
 })
 
+//http://localhost:8080/api/products/numeroABuscar
+router.get('/:pid', async (req, res) => {//para obtener un producto por id
+    try {
+        const productId = parseInt(req.params.pid)
+        const product = await productsService.getProductById(productId)
+        res.json({ message: 'El producto obtenido: ', data: product })
+    } catch (error) {
+        res.json({status: 'error', message: error.message})
+    }
 
+})
 
 export { router as productsRoutes};
