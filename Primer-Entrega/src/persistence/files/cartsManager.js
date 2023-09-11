@@ -1,3 +1,5 @@
+import fs from "fs";
+
 export class CartsManager{
     constructor(path) {
         this.pathFile = path;
