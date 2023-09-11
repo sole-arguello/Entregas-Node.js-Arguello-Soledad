@@ -47,4 +47,19 @@ router.post('/', async (req, res) => {
         
 })
 
+//http://localhost:8080/api/products/numeroActualizar
+router.put('/:pid', async (req, res) => {
+    try {
+        //traigo el id a modificar
+        const productId = parseInt(req.params.pid)
+        //traigo los campos cargados
+        const product = req.body
+        //actualizo
+        const updatedProduct = await productsService.updateProduct(productId, product)
+        res.json({ message: 'El producto actualizado: ', data: updatedProduct })
+    } catch (error) {
+        res.json({status: 'error', message: error.message})
+    }
+})
+
 export { router as productsRoutes};
