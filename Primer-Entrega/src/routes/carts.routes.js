@@ -13,6 +13,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+//http://localhost:8080/api/carts/cid para obtener el carrito por ID
+router.get("/:cid", async (req, res) => {
+    try {
+      const idcarts = parseInt(req.params.cid); //obtengo el parametro cid de la URL
+      const carts = await cartsService.getCarts();
+      const cart = carts.find((cart) => cart.id === idcarts); //busco el carrito por id
+      res.json({ message: "Carrito encontrado", data: cart });
+    } catch (error) {
+      res.json({ status: "error", message: error.message });
+    }
+  });
+
 //http://localhost:8080/api/carts para craer carritos
 router.post("/", async (req, res) => {
     try {
