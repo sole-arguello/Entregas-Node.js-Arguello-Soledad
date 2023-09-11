@@ -32,4 +32,19 @@ router.get('/:pid', async (req, res) => {//para obtener un producto por id
 
 })
 
+//http://localhost:8080/api/products
+router.post('/', async (req, res) => {
+    try {
+        const product = req.body;
+        if (!product) {
+            throw new Error('El cuerpo de la solicitud está vacío');
+        }
+        const newProduct = await productsService.createProduct(product);
+        res.json({ message: 'El producto creado: ', data: newProduct });
+    } catch (error) {
+        res.json({status: 'error', message: error.message})
+    }
+        
+})
+
 export { router as productsRoutes};
