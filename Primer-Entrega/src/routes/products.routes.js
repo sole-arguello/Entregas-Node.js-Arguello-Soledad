@@ -2,25 +2,24 @@ import { Router } from "express";
 
 const router = Router();
 
-let products = [];
-//ruta para obtener todos los productos
-router.get('/', (req, res) => {
-    res.send({data: products});
-})
-//ruta para obtener todos los productos por ?limit
-router.get('/', (req, res) => {
-    const limit = req.query.limit//obtengo el limite de tipo string
-    const limitNumber = parseInt(limit)
-    if(limit){
-        const productsLimit = products.slice(0, limitNumber)
-        res.send({data: productsLimit})
-    }else{
-        res.send({data: products})
+//http://localhost:8080/api/products //http://localhost:8080/api/products?limit=rangoLimite
+router.get('/', async (req, res) => {//ruta para obtener todos los productos
+
+    try {
+        const limit = req.query.limit//obtengo el limite de tipo string
+        const limitNumber = parseInt(limit)
+        const products = await productsService.getProducts()
+        if(limit){
+            const productsLimit = products.slice(0, limitNumber)
+            res.json({ message: 'Listado de productos por limit:', data: productsLimit})
+        }else{
+            res.json({ message: 'Listado de productos', data: products })
+        }
+    } catch (error) {
+        res.json({status: 'error', message: error.message})
     }
 })
-//ruta para obtener un producto
-router.get('/:productsId', (req, res) => {
-    res.send({data: products[req.params.id]});
-})
+
+
 
 export { router as productsRoutes};
