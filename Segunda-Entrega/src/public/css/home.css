@@ -1,0 +1,8 @@
+.titleList{
+    text-align: center;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

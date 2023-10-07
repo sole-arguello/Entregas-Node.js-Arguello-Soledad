@@ -1,0 +1,43 @@
+<h1 class="title">Productos en Tiempo Real</h1>
+
+<div class="container">
+
+  <div>
+    <h2>Formulario para cargar productos</h2>
+    {{!-- con el id capturo el producto en el archivo js/realTime.js --}}
+    <form id="productForm">
+      <input type="text" name="title" placeholder="Nombre del producto" required>
+      <br><br>
+      <input type="text" name="description" placeholder="Descripción del producto">
+      <br><br>
+      <input type="text" name="price" placeholder="Precio">
+      <br><br>
+      <input type="text" name="code" placeholder="Código">
+      <br><br>
+      <input type="text" name="thumbnail" placeholder="Imagen">
+      <br><br>
+      <input type="text" name="stock" placeholder="Stock">
+      <br><br>
+      <input type="text" name="category" placeholder="Categoría del producto">
+      <br><b></br>
+
+      <button type="submit">Agregar Producto</button>
+    </form>
+  </div>
+
+  <div >
+    <h2 class="subtitle">Listado de Productos</h2>
+
+    {{!-- con el id capturo el producto en el archivo js/realTime.js --}}
+    <ul class="productList" id="productList">
+
+    </ul>
+  </div>
+</div>
+
+
+
+
+{{!-- configuro websocket del lado del cliente --}}
+<script src="socket.io/socket.io.js"></script>
+<script src="js/realTime.js"></script>

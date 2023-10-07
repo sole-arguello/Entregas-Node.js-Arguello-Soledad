@@ -1,0 +1,22 @@
+<h1>Pagina de Chat</h1>
+
+{{!-- para mostrar quein se conecta --}}
+<p>Bienvenido <span id="userName"></span></p>
+
+
+{{!-- para mostar los mensajes de los usuarios --}}
+<div id="chatPanel"></div>
+
+{{!-- para recibir los mensajes de los usuarios --}}
+<input type="text" id="inputMessage" placeholder="Escribe tu mensaje">
+<button id="btnSendMessage">Enviar</button>
+
+
+
+
+{{!-- importo socket del lado del cliente --}}
+<script src="/socket.io/socket.io.js"></script>
+{{!-- libreria de sweetalert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{!-- conecto el front --}}
+<script src="/js/chat.js"></script>
