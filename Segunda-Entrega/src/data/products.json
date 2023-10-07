@@ -1,0 +1,35 @@
+[
+	{
+		"title": "Producto 1",
+		"description": "Descripción del producto 1",
+		"price": 200,
+		"thumbnail": "img 1",
+		"code": "DEF456",
+		"boolean": true,
+		"stock": 10,
+		"category": "category 1",
+		"id": 1
+	},
+	{
+		"title": "Producto 2",
+		"description": "Descripción del producto 2",
+		"price": 300,
+		"thumbnail": "img 2",
+		"code": "YTF456",
+		"boolean": true,
+		"stock": 10,
+		"category": "category 2",
+		"id": 2
+	},
+	{
+		"title": "Producto 3",
+		"description": "Descripción del producto 3",
+		"price": 400,
+		"thumbnail": "img 3",
+		"code": "YPF776",
+		"boolean": true,
+		"stock": 10,
+		"category": "category 3",
+		"id": 3
+	}
+]
