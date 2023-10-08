@@ -3,10 +3,26 @@ import mongoose from "mongoose";
 const cartsCollection = 'carts';
 
 const cartsSchema = new mongoose.Schema({
-    products: {
-        type: [
-            {
-                _id: String,
+    // products: {
+    //     type: [
+    //         {
+    //             _id: String,
+    //             quantity: {
+    //                 type: Number,
+    //                 required: true
+    //             }
+    //         }
+    //     ],
+    //     default: []//para cuando se cree los productos se cree el carrito vacio
+    // }
+
+    products: {//la variable que tiene la populacion
+        type: [//tipo array
+            {//id del producto
+                productId: {//populacion
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "products",//donde esta almacenado los productos
+                },
                 quantity: {
                     type: Number,
                     required: true

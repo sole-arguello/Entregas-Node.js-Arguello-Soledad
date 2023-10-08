@@ -5,10 +5,22 @@ export class CartsManagerMongo {
     constructor(){
         this.model = cartsModel
     }
-
-    async getCarts() {
+    async getCarts(){
         try {
             const resultado = await this.model.find();
+            return resultado;
+        } catch (error) {
+            console.log('get carrito', error.message);
+            throw new Error('No se pudo obtener el listado de los carritos ', error.message);
+        }   
+    }
+
+    async getCartsId(cartId) {
+        console.log('cartId', cartId)
+
+        try {
+            const resultado = await this.model.findById(cartId).populate('products.productId');
+            console.log('resultado', resultado)
             return resultado;
         } catch (error) {
             console.log('get carrito', error.message);
@@ -49,4 +61,15 @@ export class CartsManagerMongo {
             throw new Error('No se pudo agregar el producto ', error.message);
         }
     }
+
+    // async updateCart(cartId, productId, quantity){
+    //     try {
+
+    //     } catch (error) {
+    //         console.log('actualizar carrito', error.message);
+    //         throw new Error('No se pudo actualizar el carrito ', error.message);
+            
+    //     }
+    // }
+
 }

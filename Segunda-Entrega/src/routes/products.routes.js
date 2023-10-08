@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
         res.json({ status: 'error',  message: error.message });
     }
 })
-
+//localhost:8080/api/products
 router.post('/', async (req, res) => {
     try {
         const product = req.body;
