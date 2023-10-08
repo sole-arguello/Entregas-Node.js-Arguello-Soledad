@@ -8,7 +8,6 @@ const router = Router()
 router.get("/", async (req, res) => {
     try {
       const carts = await cartsService.getCarts();
-      console.log(carts);
       res.json({ message: "Listado de carritos", data: carts });
     } catch (error) {
       res.json({ status: "error", message: error.message });
@@ -54,5 +53,30 @@ router.get("/", async (req, res) => {
       res.json({ status: "error", message: error.message });
     }
   });
+
+  //ruta para actualizar por id
+  //http://localhost:8080/api/carts/:cid
+  router.put("/:cid", async (req, res) => {
+    try {
+      const id = req.params.cid;//encuentro el id
+      const updatedCart = await cartsService.updateCart(id, req.body);// le paso el id y el cuerpo 
+      res.json({ message: "Carrito con id ' " + id + " ' actualizado con exito", data: updatedCart });
+    }
+    catch (error) {
+      res.json({ status: "error",  message: error.message });
+    }
+  })
+
+  router.delete("/:cid", async (req, res) => {
+    try {
+      const id = req.params.cid;//encuentro el id
+      const cartDeleted = await cartsService.deleteCart(id);
+      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito", data: cartDeleted });
+      
+    }
+    catch (error) {
+      res.json({ status: "error",  message: error.message });
+    }
+  })
 
 export { router as cartsRouter}

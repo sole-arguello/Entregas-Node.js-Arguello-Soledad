@@ -59,15 +59,33 @@ export class CartsManagerMongo {
             throw new Error('No se pudo agregar el producto ', error.message);
         }
     }
+    //metodo que actualiza el carrito
+    async updateCart(cartId, prodcutId) {
+        try {
+            //recibo el id y el producto
+            const cart = await this.model.findByIdAndUpdate(cartId, prodcutId, { new: true });
+            if (!cart) {
+                throw new Error("No se pudo encontrar el carrito a actualizar");
+            }
+            return cart;
+        } catch (error) {
+            console.log('actualizar carrito', error.message);
+            throw new Error('No se pudo actualizar el carrito ', error.message);
+        }
+    }
 
-    // async updateCart(cartId, productId, quantity){
-    //     try {
-
-    //     } catch (error) {
-    //         console.log('actualizar carrito', error.message);
-    //         throw new Error('No se pudo actualizar el carrito ', error.message);
-            
-    //     }
-    // }
+    //metodo para elimina el carrito
+    async deleteCart(cartId) {
+        try {
+            const cart = await this.model.findByIdAndDelete(cartId);
+            if (!cart) {
+                throw new Error("No se pudo encontrar el carrito a eliminar");
+            }
+            return cart;
+        } catch (error) {
+            console.log('eliminar carrito', error.message);
+            throw new Error('No se pudo eliminar el carrito ', error.message);
+        }
+    }
 
 }
