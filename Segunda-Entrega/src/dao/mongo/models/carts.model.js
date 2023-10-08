@@ -18,8 +18,8 @@ const cartsSchema = new mongoose.Schema({
 
     products: {//la variable que tiene la populacion
         type: [//tipo array
-            {//id del producto
-                productId: {//populacion
+            {//id del producto igual que la DB
+                _id: {//populacion
                     type: mongoose.Schema.Types.ObjectId,
                     ref: "products",//donde esta almacenado los productos
                 },
