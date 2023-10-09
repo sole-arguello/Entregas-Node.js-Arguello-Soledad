@@ -59,24 +59,62 @@ router.get("/", async (req, res) => {
   router.put("/:cid", async (req, res) => {
     try {
       const id = req.params.cid;//encuentro el id
-      const updatedCart = await cartsService.updateCart(id, req.body);// le paso el id y el cuerpo 
+      const updatedCart = await cartsService.updateCartId(id, req.body);// le paso el id y el cuerpo 
       res.json({ message: "Carrito con id ' " + id + " ' actualizado con exito", data: updatedCart });
     }
     catch (error) {
       res.json({ status: "error",  message: error.message });
     }
   })
-
+  
+  //ruta que actualiza el produto del carrito por su id
+  //http://localhost:8080/api/carts/:cid/products/:pid 
+  router.put("/:cid/products/:pid", async (req, res) => {
+    try {
+      const id = req.params.cid;
+      const idProduct = req.params.pid;
+      const newQuantity = req.body.quantity;
+      console.log("de rutas ", id, idProduct, newQuantity);
+      const updatedCart = await cartsService.updateProductInCart(id, idProduct, newQuantity);
+      res.json({ message: "Carrito con id ' " + id + " ' actualizado con exito, nueva cantidad " + newQuantity + 
+      " del producto id " + idProduct });
+    }
+    catch (error) {
+      res.json({ status: "error",  message: error.message });
+    }
+  })
+   //http://localhost:8080/api/carts/:cid
   router.delete("/:cid", async (req, res) => {
     try {
       const id = req.params.cid;//encuentro el id
-      const cartDeleted = await cartsService.deleteCart(id);
-      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito", data: cartDeleted });
+      const cartDeleted = await cartsService.deleteCartId(id);
+      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito"});
       
     }
     catch (error) {
       res.json({ status: "error",  message: error.message });
     }
   })
+
+  // Ruta para eliminar un producto específico de un carrito por su ID de carrito y producto
+  // http://localhost:8080/api/carts/:cid/products/:pid
+  router.delete("/:cid/products/:pid", async (req, res) => {
+    try {
+        const cartId = req.params.cid;
+        const productId = req.params.pid;
+
+        // Llama al método para eliminar el producto del carrito
+        const deletedProduct = await cartsService.deleteProductInCart(cartId, productId);
+
+        if (deletedProduct) {
+            res.json({ message: "Producto eliminado del carrito con éxito" });
+        } else {
+            res.status(404).json({ status: "error", message: "Carrito o producto no encontrado" });
+        }
+    } catch (error) {
+        res.status(500).json({ status: "error", message: error.message });
+    }
+  });
+
 
 export { router as cartsRouter}
