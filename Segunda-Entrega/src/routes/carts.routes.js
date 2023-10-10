@@ -44,9 +44,8 @@ router.get("/", async (req, res) => {
   router.put("/:cid/product/:pid", async (req, res) => {
     try {
       const {cid: idCarts, pid: idProduct} = req.params;
-      const quantity = 1;
   
-      const cart = await cartsService.addProduct(idCarts, idProduct, quantity);
+      const cart = await cartsService.addProduct(idCarts, idProduct);
       res.json({ message: "Producto agregado al carrito", data: cart });
     } catch (error) {
       res.json({ status: "error", message: error.message });
@@ -71,9 +70,8 @@ router.get("/", async (req, res) => {
   router.put("/:cid/products/:pid", async (req, res) => {
     try {
       const { cid: id, pid: idProduct } = req.params;
-      const newQuantity  = req.body;
+      const newQuantity  = req.body.newQuantity;
       const updatedCart = await cartsService.updateProductInCart(id, idProduct, newQuantity);
-      console.log("de rutas ", updatedCart);
       res.json({ message: "success", data: updatedCart });
     }
     catch (error) {
