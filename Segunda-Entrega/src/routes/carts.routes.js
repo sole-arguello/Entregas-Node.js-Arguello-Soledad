@@ -40,6 +40,20 @@ router.get("/", async (req, res) => {
       res.json({ status: "error", message: error.message });
     }
   });
+
+    //http://localhost:8080/api/carts/:cid//ruta para actualizar por id el carrito completo
+  router.put("/:cid", async (req, res) => {
+    try {
+      const {cid: idCart } = req.params; //obtengo el id del carrito
+      const newProduct = req.body;//obtengo el producto
+      const updatedCart = await cartsService.updateCartId(idCart, newProduct);// le paso el id y el cuerpo 
+      res.json({ message: "Carrito actualizado con exito", data: updatedCart });
+    }
+    catch (error) {
+      res.json({ status: "error",  message: error.message });
+    }
+  })
+  
   //http://localhost:8080/api/carts/:cid/product/:pid para agregar productos al carrito
   router.put("/:cid/product/:pid", async (req, res) => {
     try {
@@ -52,22 +66,8 @@ router.get("/", async (req, res) => {
     }
   });
 
-  //ruta para actualizar por id el carrito completo
-  //http://localhost:8080/api/carts/:cid
-  router.put("/:cid", async (req, res) => {
-    try {
-      const {cid: idCart } = req.params; //obtengo el id del carrito
-      const newProduct  = req.body;//obtengo el producto
-      const updatedCart = await cartsService.updateCartId(idCart, newProduct);// le paso el id y el cuerpo 
-      res.json({ message: "Carrito actualizado con exito", data: updatedCart });
-    }
-    catch (error) {
-      res.json({ status: "error",  message: error.message });
-    }
-  })
   
-  //ruta que actualiza el produto del carrito por su id
-  //http://localhost:8080/api/carts/:cid/products/:pid 
+  //http://localhost:8080/api/carts/:cid/products/:pid //ruta que actualiza el produto del carrito por su id
   router.put("/:cid/products/:pid", async (req, res) => {
     try {
       const { cid: id, pid: idProduct } = req.params;
@@ -92,8 +92,8 @@ router.get("/", async (req, res) => {
     }
   })
 
-  // Ruta para eliminar un producto específico de un carrito por su ID de carrito y producto
-  // http://localhost:8080/api/carts/:cid/products/:pid
+
+  // http://localhost:8080/api/carts/:cid/products/:pid   // Ruta para eliminar un producto específico de un carrito por su ID de carrito y producto
   router.delete("/:cid/products/:pid", async (req, res) => {
     try {
 

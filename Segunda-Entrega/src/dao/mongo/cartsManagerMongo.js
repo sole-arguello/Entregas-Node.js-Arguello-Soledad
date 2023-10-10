@@ -67,8 +67,10 @@ export class CartsManagerMongo {
         console.log('newProduct', newProduct);
         try {
             const cart = await this.getCartsId(cartId)
+            const { products } = cart
+            console.log('products', products);
             if(cart){
-                if(cart.products.length === 0){
+                if(!cart || cart.length === 0){
                     throw new Error("el carrito no contiene productos");
                 }else{
                     cart.products = newProduct
