@@ -90,7 +90,7 @@ export class CartsManagerMongo {
     //     }
     // }
     async deleteProductInCart(cartId, productId) {
-        console.log(data.products)
+
         try {
             // Busca el carrito por su ID
             const cart = await this.model.findById(cartId);
