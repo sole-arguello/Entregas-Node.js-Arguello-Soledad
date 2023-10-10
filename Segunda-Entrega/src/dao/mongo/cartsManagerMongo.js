@@ -18,7 +18,7 @@ export class CartsManagerMongo {
     async getCartsId(cartId) {
 
         try {//el id lo traigo igual que la DB _id
-            const resultado = await this.model.findById(cartId).populate("products._id");
+            const resultado = await this.model.findById(cartId).populate("products.productId");
             return resultado;
         } catch (error) {
             console.log('get carrito', error.message);
@@ -35,19 +35,15 @@ export class CartsManagerMongo {
             throw new Error('No se pudo crear el carrito ', error.message);
         }
     }
-
+    //metodo que agrega productos al carrito
     async addProduct(cartId, productId) {
         try {
             let quantity = 1
             const cart = await this.model.findById(cartId);
-            console.log( 'cart', cart );
 
             if(cart){
                 const { products } = cart;
-                console.log( 'products', products );
-
                 const productExist = products.find((prod) => prod.productId == productId);
-                console.log( 'existe', productExist );
                 if(productExist){
                     productExist.quantity += quantity;
                 }else{
@@ -64,36 +60,38 @@ export class CartsManagerMongo {
             throw new Error('No se pudo agregar el producto ', error.message);
         }
     }
-    //metodo que actualiza el producto completo en el carrito y su cantidad
-    async updateCartId(cartId, prodcutId) {
-        try {
-            //recibo el id y el producto
-            const cart = await this.model.findByIdAndUpdate(cartId, prodcutId, { new: true });
-            if (!cart) {
-                throw new Error("No se pudo encontrar el carrito a actualizar");
-            }
-            return cart;
-        } catch (error) {
-            console.log('actualizar carrito', error.message);
-            throw new Error('No se pudo actualizar el carrito ', error.message);
-        }
+
+    //PUT api/carts/:cid deberá actualizar el carrito con un arreglo de productos
+    async updateCartId(cartId) {
+
     }
     //deberá poder actualizar SÓLO la cantidad de ejemplares del producto por 
     //cualquier cantidad pasada desde req.body
     async updateProductInCart(cartId, productId, newQuantity) {
         try {
             const cart = await this.getCartsId(cartId)
-            const productIndex =  cart.products.findIndex((prod) => prod._id._id == productId)
-            if(productIndex >= 0){
-                cart.products[productIndex].quantity = newQuantity
-                const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
-                return result
+            if(cart){
+            
+                const productIndex =  cart.products.findIndex((prod) => prod.productId._id == productId)
+                          
+                if(productIndex >= 0){
+                    cart.products[productIndex].quantity = newQuantity
+                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                    return result
+                }else{
+                    throw new Error("No se pudo encontrar el producto");
+                }
+            }else{
+                throw new Error("No se pudo encontrar el carrito");
             }
+
          } catch (error) {
              console.log('actualizar carrito', error.message);
              throw new Error('No se pudo actualizar el carrito ', error.message);
          }
     }
+    
+
 
     //metodo para elimina el carrito
     async deleteCartId(cartId) {
@@ -102,7 +100,8 @@ export class CartsManagerMongo {
             if (!cart) {
                 throw new Error("No se pudo encontrar el carrito a eliminar");
             }
-            return cart;
+            const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
+            return ;
         } catch (error) {
             console.log('eliminar carrito', error.message);
             throw new Error('No se pudo eliminar el carrito ', error.message);
@@ -111,21 +110,27 @@ export class CartsManagerMongo {
 
     //DELETE api/carts/:cid/products/:pid deberá eliminar del carrito el producto seleccionado.
     async deleteProductInCart(cartId, productId) {
-        // try {
-        //     const cart = await this.model.findById(cartId);
-        //     const productExist = cart.products.find((prod) => prod._id._id == productId);
-        //     if (productExist) {
-        //         const newProducts = cart.products.filter((prod) => prod._id._id != productId);
-        //         cart.products = newProducts
-        //         const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
-        //         return result
-        //     }else{
-        //         throw new Error("No se pudo encontrar el producto a eliminar");
-        //     }
-        // } catch (error) {
-        //     console.log('eliminar carrito', error.message);
-        //     throw new Error('No se pudo eliminar el carrito ', error.message);
-        // }
+        try {
+            const cart = await this.model.findById(cartId);
+
+            if(cart){
+                const productExist = cart.products.find((prod) => prod.productId._id == productId);
+                if (productExist) {
+                    const newProducts = cart.products.filter((prod) => prod.productId._id != productId);
+                    cart.products = newProducts
+                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
+                    return result
+                }else{
+                    throw new Error("No se pudo encontrar el producto a eliminar");
+                }
+            }else{
+                throw new Error("No se pudo encontrar el carrito");
+            }
+
+        } catch (error) {
+            console.log('eliminar carrito', error.message);
+            throw new Error('No se pudo eliminar el carrito ', error.message);
+        }
     }
     
 

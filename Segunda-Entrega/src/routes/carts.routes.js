@@ -55,14 +55,14 @@ router.get("/", async (req, res) => {
   //ruta para actualizar por id
   //http://localhost:8080/api/carts/:cid
   router.put("/:cid", async (req, res) => {
-    try {
-      const id = req.params.cid;//encuentro el id
-      const updatedCart = await cartsService.updateCartId(id, req.body);// le paso el id y el cuerpo 
-      res.json({ message: "Carrito con id ' " + id + " ' actualizado con exito", data: updatedCart });
-    }
-    catch (error) {
-      res.json({ status: "error",  message: error.message });
-    }
+    // try {
+    //   const id = req.params.cid;//encuentro el id
+    //   const updatedCart = await cartsService.updateCartId(id, req.body);// le paso el id y el cuerpo 
+    //   res.json({ message: "Carrito actualizado con exito", data: updatedCart });
+    // }
+    // catch (error) {
+    //   res.json({ status: "error",  message: error.message });
+    // }
   })
   
   //ruta que actualiza el produto del carrito por su id
@@ -83,7 +83,7 @@ router.get("/", async (req, res) => {
     try {
       const id = req.params.cid;//encuentro el id
       const cartDeleted = await cartsService.deleteCartId(id);
-      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito"});
+      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito", data: cartDeleted });
       
     }
     catch (error) {
