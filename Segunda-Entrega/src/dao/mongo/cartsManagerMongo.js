@@ -80,7 +80,7 @@ export class CartsManagerMongo {
             const cart = await this.getCartsId(cartId)
             const productIndex =  cart.products.findIndex((prod) => prod._id == productId)
             if(productIndex >= 0){
-                cart.products[productIndex].quantity = newQuntity
+                cart.products[productIndex].quantity = newQuantity
                 const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
                 return result
             }
