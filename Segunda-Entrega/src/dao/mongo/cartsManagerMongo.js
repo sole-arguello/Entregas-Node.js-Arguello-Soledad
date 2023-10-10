@@ -76,7 +76,18 @@ export class CartsManagerMongo {
     //deberá poder actualizar SÓLO la cantidad de ejemplares del producto por 
     //cualquier cantidad pasada desde req.body
     async updateProductInCart(cartId, productId, newQuantity) {
-
+        try {
+            const cart = await this.getCartsId(cartId)
+            const productIndex =  cart.products.findIndex((prod) => prod._id == productId)
+            if(productIndex >= 0){
+                cart.products[productIndex].quantity = newQuantity
+                const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                return result
+            }
+         } catch (error) {
+             console.log('actualizar carrito', error.message);
+             throw new Error('No se pudo actualizar el carrito ', error.message);
+         }
     }
 
     //metodo para elimina el carrito

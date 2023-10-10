@@ -70,13 +70,12 @@ router.get("/", async (req, res) => {
   //http://localhost:8080/api/carts/:cid/products/:pid 
   router.put("/:cid/products/:pid", async (req, res) => {
     try {
-      const id = req.params.cid;
-      const idProduct = req.params.pid;
-      const newQuantity = req.body.quantity;
+      const { cid: id, pid: idProduct } = req.params;
+      const newQuantity  = req.body;
       console.log("de rutas ", id, idProduct, newQuantity);
       const updatedCart = await cartsService.updateProductInCart(id, idProduct, newQuantity);
-      res.json({ message: "Carrito con id ' " + id + " ' actualizado con exito, nueva cantidad " + newQuantity + 
-      " del producto id " + idProduct });
+      console.log("de rutas ", updatedCart);
+      res.json({ message: "success", data: updatedCart });
     }
     catch (error) {
       res.json({ status: "error",  message: error.message });
