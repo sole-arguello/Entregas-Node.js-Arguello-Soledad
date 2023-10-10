@@ -72,7 +72,6 @@ router.get("/", async (req, res) => {
     try {
       const { cid: id, pid: idProduct } = req.params;
       const newQuantity  = req.body;
-      console.log("de rutas ", id, idProduct, newQuantity);
       const updatedCart = await cartsService.updateProductInCart(id, idProduct, newQuantity);
       console.log("de rutas ", updatedCart);
       res.json({ message: "success", data: updatedCart });
