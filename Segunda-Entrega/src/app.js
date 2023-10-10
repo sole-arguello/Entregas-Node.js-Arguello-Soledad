@@ -17,7 +17,8 @@ const port = 8080;//configuro puerto
 const app = express();
 
 //midleware
-app.use(express.json());
+app.use(express.json());//para recibir json
+app.use(express.urlencoded({ extended: true }));//para recibir datos del formulario
 app.use(express.static(path.join(__dirname, '/public')));
 
 //configuro para websocket del lado del server

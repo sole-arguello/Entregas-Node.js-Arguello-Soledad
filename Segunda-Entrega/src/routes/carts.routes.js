@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
     }
   });
   
-  //http://localhost:8080/api/carts para craer carritos
+  //http://localhost:8080/api/carts para craer carritos vacios
   router.post("/", async (req, res) => {
     try {
       const newCart = await cartsService.createCart();
@@ -40,11 +40,10 @@ router.get("/", async (req, res) => {
       res.json({ status: "error", message: error.message });
     }
   });
-  //http://localhost:8080/api/carts/:cid/products/:pid para agregar productos al carrito
-  router.post("/:cid/products/:pid", async (req, res) => {
+  //http://localhost:8080/api/carts/:cid/product/:pid para agregar productos al carrito
+  router.put("/:cid/product/:pid", async (req, res) => {
     try {
-      const idCarts = req.params.cid;
-      const idProduct = req.params.pid;
+      const {cid: idCarts, pid: idProduct} = req.params;
       const quantity = 1;
   
       const cart = await cartsService.addProduct(idCarts, idProduct, quantity);
@@ -100,17 +99,12 @@ router.get("/", async (req, res) => {
   // http://localhost:8080/api/carts/:cid/products/:pid
   router.delete("/:cid/products/:pid", async (req, res) => {
     try {
-        const cartId = req.params.cid;
-        const productId = req.params.pid;
 
+        const { cid: idCarts, pid: productId } = req.params;
+        const cart = await cartsService.getCartsId(idCarts);
         // Llama al método para eliminar el producto del carrito
-        const deletedProduct = await cartsService.deleteProductInCart(cartId, productId);
-
-        if (deletedProduct) {
-            res.json({ message: "Producto eliminado del carrito con éxito" });
-        } else {
-            res.status(404).json({ status: "error", message: "Carrito o producto no encontrado" });
-        }
+        const deletedProduct = await cartsService.deleteProductInCart(idCarts, productId);
+        res.json({ message: "Producto eliminado del carrito", data: deletedProduct }); 
     } catch (error) {
         res.status(500).json({ status: "error", message: error.message });
     }

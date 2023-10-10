@@ -3,7 +3,7 @@ import { productsService } from '../dao/index.js';
 const router = Router();
 
 //ruta para la vista home de todos los productos
-router.get('/', async (req, res) => {
+router.get('/products', async (req, res) => {
     try {
         const products = await productsService.getProducts();
 
