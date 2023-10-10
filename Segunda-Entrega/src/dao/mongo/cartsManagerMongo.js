@@ -62,8 +62,28 @@ export class CartsManagerMongo {
     }
 
     //PUT api/carts/:cid deberá actualizar el carrito con un arreglo de productos
-    async updateCartId(cartId) {
+    async updateCartId(cartId, newProduct) {
+        console.log('cart', cartId);
+        console.log('newProduct', newProduct);
+        try {
+            const cart = await this.getCartsId(cartId)
+            if(cart){
+                if(cart.products.length === 0){
+                    throw new Error("el carrito no contiene productos");
+                }else{
+                    cart.products = newProduct
 
+                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                    return result
+                }
+            }else{
+                throw new Error("No se pudo encontrar el carrito");
+            }
+            
+        } catch (error) {
+            console.log('actualizar carrito completo', error.message);
+            throw new Error('No se pudo actualizar el carrito ');
+        }
     }
     //deberá poder actualizar SÓLO la cantidad de ejemplares del producto por 
     //cualquier cantidad pasada desde req.body
