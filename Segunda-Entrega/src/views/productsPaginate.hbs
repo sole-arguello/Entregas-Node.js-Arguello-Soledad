@@ -1,5 +1,12 @@
 <h1>Productos Con Paginacion</h1>
 
 {{#each payload}}
-    <div>Nombre del Producto: {{this.title}}</div>
+    <div>
+        Nombre del Producto: {{this.title}}
+        <button onclick="addToCart(`{{this._id}})">agregar al carrito</button>
+    </div>
+
+    
 {{/each}}
+
+<script src="/js/productsPaginate.js"></script>

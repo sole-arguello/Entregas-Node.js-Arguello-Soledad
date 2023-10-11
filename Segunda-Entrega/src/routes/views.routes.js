@@ -41,7 +41,7 @@ router.get('/message', (req, res) =>{
 router.get('/products', async (req, res) => {
     try {
         const result = await productsService.getProductsPaginate();
-        //console.log('products', result);
+        console.log('products', result);
         const dataProducts = {
             status:'success',
             payload: result,
