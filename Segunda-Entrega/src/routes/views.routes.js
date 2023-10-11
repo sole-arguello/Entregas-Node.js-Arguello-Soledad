@@ -37,25 +37,43 @@ router.get('/message', (req, res) =>{
     }
 } )
 
-//pagiante
+//pagiante// localhost:8080?page=1 ... 2 ...3 ..etc
 router.get('/products', async (req, res) => {
     try {
-        const result = await productsService.getProductsPaginate();
-        console.log('products', result);
+
+        const { limit=4, page=1 } = req.query;
+        const query = {};
+        const options = {
+            limit,
+            page,
+            sort: { price: 1 },   
+            lean: true
+        }
+        const result = await productsService.getProductsPaginate(query, options);
+        //console.log('products', result);
+        //obtengo la ruta del servidor 
+        const baseUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
         const dataProducts = {
             status:'success',
             payload: result,
             totalPages: result.totalPages,
-        // prevPage: Página anterior
-        // nextPage: Página siguiente
-        // page: Página actual
-        // hasPrevPage: Indicador para saber si la página previa existe
-        // hasNextPage: Indicador para saber si la página siguiente existe.
-        // prevLink: Link directo a la página previa (null si hasPrevPage=false)
-        // nextLink: Link directo a la página siguiente (null si hasNextPage=false)
+            prevPage: result.prevPage ,
+            nextPage: result.nextPage,
+            page: result.page,
+            pagingCounter: result.pagingCounter,
+            hasPrevPage: result.hasPrevPage,
+            hasNextPage: result.hasNextPage,
+            prevLink: result.hasPrevPage ? 
+            `${baseUrl.replace(`page=${result.page}`, `page=${result.prevPage}`)}` 
+            : null,
+            nextLink: result.hasNextPage ? baseUrl.includes("page") ? 
+            baseUrl.replace(`page=${result.page}`, `page=${result.nextPage}`) :
+            baseUrl.concat(`?page=${result.nextPage}`) : null
+
         }
-        console.log(dataProducts)
-        res.render('productsPaginate', dataProducts);//podria ir solo products
+        console.log(dataProducts.payload)
+        console.log(dataProducts.nextLink, dataProducts.prevLink)
+        res.render('productsPaginate', dataProducts);
     } catch (error) {
         res.status(500).json({ message: error.message });
         

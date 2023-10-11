@@ -1,9 +1,26 @@
 <h1>Productos Con Paginacion</h1>
 
-{{#each payload}}
-    <div>
-        Nombre del Producto: {{this.title}}
-        <button onclick="addToCart(`{{this._id}})">agregar al carrito</button>
+{{#each payload.docs}}
+    <div class="containerProd">
+        <div >
+            {{!-- <p>Nombre del Producto: {{this.title}}</p>
+            <p>Descripcion: {{this.description}}</p>
+            <p>Precio: {{this.price}}</p>
+            <p>Imagen: {{this.thumbnail}}</p>
+            <p>Code: {{this.code}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <p>Categoria: {{this.category}}</p> --}}
+        Nombre del Producto: {{this.title}} - 
+        Descripcion: {{this.description}} - 
+        Precio: {{this.price}} - 
+        Imagen: {{this.thumbnail}} - 
+        Code: {{this.code}} - 
+        Stock: {{this.stock}} - 
+        Categoria: {{this.category}} -
+        <button onclick="addToCart(`{{this._id}}`)">agregar al carrito</button>
+        </div>
+
+        
     </div>
 
     

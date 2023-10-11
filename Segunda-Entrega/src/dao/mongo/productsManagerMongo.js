@@ -7,12 +7,9 @@ export class ProductsManagerMongo{
     }
 
     //metodo para obtener productos del paginate
-    async getProductsPaginate(){
+    async getProductsPaginate(query, options){
         try {
-            //filtro, limit, cantidad de paginas, lean(para mostrar en home)
-            const result = await this.model.paginate(
-                {},{page:1,limit:3, lean:true}
-                );
+            const result = await this.model.paginate(query, options);
             return result
         } catch (error) {
             console.log('obtener producto',error.message);

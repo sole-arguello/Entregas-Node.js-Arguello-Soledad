@@ -112,12 +112,14 @@ export class CartsManagerMongo {
     //metodo para elimina el carrito
     async deleteCartId(cartId) {
         try {
-            const cart = await this.model.findByIdAndDelete(cartId);
+            const cart = await this.getCartsId(cartId);
             if (!cart) {
                 throw new Error("No se pudo encontrar el carrito a eliminar");
+            }else{
+                await this.model.findByIdAndDelete(cartId)
             }
             const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
-            return ;
+            return result;
         } catch (error) {
             console.log('eliminar carrito', error.message);
             throw new Error('No se pudo eliminar el carrito ', error.message);
