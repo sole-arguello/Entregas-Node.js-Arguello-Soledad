@@ -6,6 +6,20 @@ export class ProductsManagerMongo{
         this.model = productsModel
     }
 
+    //metodo para obtener productos del paginate
+    async getProductsPaginate(){
+        try {
+            //filtro, limit, cantidad de paginas, lean(para mostrar en home)
+            const result = await this.model.paginate(
+                {},{page:1,limit:3, lean:true}
+                );
+            return result
+        } catch (error) {
+            console.log('obtener producto',error.message);
+            throw new Error('No se pudo obtener el listado de  producto',error.message);
+        }
+    }
+
     async createProduct(infoProduct){
         try {
             //uso el modelo definido y el metodo de mongo
