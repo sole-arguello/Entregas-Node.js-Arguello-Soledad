@@ -63,12 +63,8 @@ export class CartsManagerMongo {
 
     //PUT api/carts/:cid deberá actualizar el carrito con un arreglo de productos
     async updateCartId(cartId, newProduct) {
-        console.log('cart', cartId);
-        console.log('newProduct', newProduct);
         try {
             const cart = await this.getCartsId(cartId)
-            const { products } = cart
-            console.log('products', products);
             if(cart){
                 if(!cart || cart.length === 0){
                     throw new Error("el carrito no contiene productos");

@@ -82,9 +82,9 @@ router.get("/", async (req, res) => {
    //http://localhost:8080/api/carts/:cid
   router.delete("/:cid", async (req, res) => {
     try {
-      const id = req.params.cid;//encuentro el id
-      const cartDeleted = await cartsService.deleteCartId(id);
-      res.json({ message: "Carrito con id ' " + id + " ' eliminado con exito", data: cartDeleted });
+      const { cid: cartId } = req.params;//encuentro el id
+      const cartDeleted = await cartsService.deleteCartId(cartId);
+      res.json({ message: "Carrito con id ' " + cartId + " ' eliminado con exito", data: cartDeleted });
       
     }
     catch (error) {
@@ -98,8 +98,6 @@ router.get("/", async (req, res) => {
     try {
 
         const { cid: idCarts, pid: productId } = req.params;
-        const cart = await cartsService.getCartsId(idCarts);
-        // Llama al método para eliminar el producto del carrito
         const deletedProduct = await cartsService.deleteProductInCart(idCarts, productId);
         res.json({ message: "Producto eliminado del carrito", data: deletedProduct }); 
     } catch (error) {
