@@ -3,10 +3,8 @@
 }
 
 .container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 100px;
+    
+
 }
 
 .subtitle{
@@ -14,6 +12,7 @@
 }
 .productList{
     display: flex;
+    flex-wrap: wrap;
     gap: 100px;
 }
 .nav__link{
