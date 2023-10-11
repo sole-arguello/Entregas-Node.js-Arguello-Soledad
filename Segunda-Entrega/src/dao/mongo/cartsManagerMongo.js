@@ -109,8 +109,6 @@ export class CartsManagerMongo {
          }
     }
     
-
-
     //metodo para elimina el carrito
     async deleteCartId(cartId) {
         try {
