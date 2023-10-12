@@ -18,7 +18,7 @@ export class CartsManagerMongo {
     async getCartsId(cartId) {
 
         try {//el id lo traigo igual que la DB _id
-            const resultado = await this.model.findById(cartId).populate("products.productId");
+            const resultado = await this.model.findById(cartId).populate("products.productId").lean();
             return resultado;
         } catch (error) {
             console.log('get carrito', error.message);
