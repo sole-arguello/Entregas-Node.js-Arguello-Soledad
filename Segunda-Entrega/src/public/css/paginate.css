@@ -1,3 +1,13 @@
 .containerProd{
 
 }
+
+.btnLink {
+    border: 1px solid black;
+    border-radius: .5rem;
+    padding: 0.2rem 1rem;
+}
+
+.containerBtn{
+    margin-top: 1rem;
+}

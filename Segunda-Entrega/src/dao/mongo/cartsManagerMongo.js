@@ -130,7 +130,7 @@ export class CartsManagerMongo {
     async deleteProductInCart(cartId, productId) {
         try {
             const cart = await this.model.findById(cartId);
-
+            
             if(cart){
                 const productExist = cart.products.find((prod) => prod.productId._id == productId);
                 if (productExist) {
@@ -142,12 +142,12 @@ export class CartsManagerMongo {
                     throw new Error("No se pudo encontrar el producto a eliminar");
                 }
             }else{
-                throw new Error("No se pudo encontrar el carrito");
+                throw new Error("No se pudo encontrar el producto en el carrito");
             }
 
         } catch (error) {
             console.log('eliminar carrito', error.message);
-            throw new Error('No se pudo eliminar el carrito ', error.message);
+            throw new Error('No se pudo eliminar el producto del carrito ', error.message);
         }
     }
     
