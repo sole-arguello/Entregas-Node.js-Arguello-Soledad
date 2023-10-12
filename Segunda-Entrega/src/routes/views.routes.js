@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { productsService } from '../dao/index.js';
+import { cartsService, productsService } from '../dao/index.js';
 const router = Router();
 
 //ruta para la vista home de todos los productos
@@ -41,7 +41,7 @@ router.get('/message', (req, res) =>{
 router.get('/products', async (req, res) => {
     try {
 
-        const { limit=4, page=1 } = req.query;
+        const { limit= 4, page=1 } = req.query;
         const query = {};
         const options = {
             limit,
@@ -71,8 +71,8 @@ router.get('/products', async (req, res) => {
             baseUrl.concat(`?page=${result.nextPage}`) : null
 
         }
-        console.log(dataProducts.payload)
-        console.log(dataProducts.nextLink, dataProducts.prevLink)
+       // console.log(dataProducts.payload)
+       // console.log('Data del console log:', dataProducts.nextLink, dataProducts.prevLink)
         res.render('productsPaginate', dataProducts);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -80,4 +80,28 @@ router.get('/products', async (req, res) => {
     }
 })
 
+//ruta hardcodeada localhost:8080/cart/6525e395443bd76c765dd0ee
+router.get('/cart/:cid', async (req, res) => {
+    const cartId = '6525e395443bd76c765dd0ee'
+    try {
+        const cart = await cartsService.getCartsId(cartId);
+        console.log('Prueba en consola', cart);
+        if(!cart){
+            return res.status(404).send('No se pudo encontrar el carrito');
+        }else{
+            console.log('Carrito en consola ',cart.products);
+            res.status(200).render('cart', { products: cart.products });
+            
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+})
+
 export { router as viewsRouter }
+
+
+
+
+
+

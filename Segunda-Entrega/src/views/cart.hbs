@@ -1,0 +1,33 @@
+<h1>Carrito de productos</h1>
+
+{{!-- {
+  _id: new ObjectId("6525e395443bd76c765dd0ee"),
+  products: [
+    {
+      productId: [Object],
+      quantity: 4,
+      _id: new ObjectId("65280476e413b5e8e0f61366")
+    }
+  ],
+  __v: 0
+} --}}
+
+<ul>
+    {{#each products}}
+
+        <li>
+            <h2>{{this.productId.title}}</h2>
+            <p>{{this.productId.description}}</p>
+            <p>{{this.productId.price}}</p>
+            <p>{{this.productId.thumbnail}}</p>
+            <p>{{this.productId.code}}</p>
+            <p>{{this.productId.stock}}</p>
+            <p>{{this.productId.category}}</p>
+            <p>{{this.quantity}}</p>
+        </li>
+
+
+    {{/each}}
+</ul>
+
+<script src="/js/cart.js"></script>
