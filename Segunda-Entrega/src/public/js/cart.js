@@ -13,6 +13,9 @@ const deleteProduct = async (productId) =>{
                 location.reload()
                 console.log('Producto eliminado del carrito');
             }
+            else{
+                console.error('Error al eliminar el producto del carrito');
+            }
         })
     } catch (error) {
         console.error('Error al eliminar un producto:', error.message);
