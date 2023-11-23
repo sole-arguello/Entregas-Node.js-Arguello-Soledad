@@ -2,8 +2,8 @@ import { usersDao } from "../dao/index.js";
 
 export class UsersSessionsService {
 
-    static createUsers(){
-        return usersDao.createUsers()
+    static createUsers(infoUser){
+        return usersDao.createUsers(infoUser)
     }
     static getUserByEmail(email){
         return usersDao.getUserByEmail(email)
