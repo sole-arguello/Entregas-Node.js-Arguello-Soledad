@@ -4,7 +4,7 @@ import { ProductsService } from "../service/products.service.js";
 export class ViewsController {
     static renderViewsHome = async (req, res) => {
         try {
-            console.log(req.user);
+            console.log('ususario logueado',req.user);
             //si no esta logeado lo redirige a login
             if(!req.user){
                 res.render('login', 

@@ -9,7 +9,9 @@ export class UsersManagerMongo {
     async createUsers(userInfo) {
         try {
             const newUser = await this.model.create(userInfo);
+            console.log('usuario creado');
             return newUser
+
         } catch (error) {
             console.log('crear usuario', error.message);
             throw new Error('No se pudo crear el usuario', error.message);
