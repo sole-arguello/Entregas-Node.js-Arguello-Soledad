@@ -1,8 +1,18 @@
 import passport from "passport";
-export const isAuth = (req, res, next) => {
+
+//------------Roles
+export const  authorization = (roles) => {
+
+    return (req, res, next) => {
+        if (!roles.includes(req.user.role)) {
+            return res.status(403).json({ message: 'No autorizado' });
+        }
+        next();
+    }
     
 }
 
+//--------------- passport
 export const registerLocalStrategy = passport.authenticate(
     'registerLocalStrategy', 
     {
