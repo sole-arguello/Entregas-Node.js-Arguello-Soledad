@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { CartsController } from '../controller/carts.controller.js';
+import { authorization } from '../middlewares/auth.js';
 
 
 const router = Router()
@@ -17,7 +18,7 @@ router.get("/", CartsController.getCarts)
   router.put("/:cid", CartsController.updateCartId)
   
   //http://localhost:8080/api/carts/:cid/product/:pid para agregar productos al carrito
-  router.put("/:cid/product/:pid", CartsController.addProduct)
+  router.put("/:cid/product/:pid", authorization(['user']),CartsController.addProduct)
 
   
   //http://localhost:8080/api/carts/:cid/products/:pid //ruta que actualiza el produto del carrito por su id

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { jwtAuth } from '../middlewares/auth.js';
+import { authorization, jwtAuth } from '../middlewares/auth.js';
 import { ViewsController } from '../controller/views.controller.js';
 
 const router = Router();
@@ -20,7 +20,7 @@ router.get('/profile', jwtAuth, ViewsController.renderViewsProfile)
 router.get('/realTimeProducts', jwtAuth, ViewsController.renderViewsRealTime)
 
 //message para linkear / caht es la renderizacion hacia el chat 
-router.get('/message', jwtAuth, ViewsController.renderViewsMessage)
+router.get('/message', jwtAuth, authorization(['user']),ViewsController.renderViewsMessage)
 
 //pagiante// localhost:8080?page=1 ... 2 ...3 ..etc
 router.get('/products', jwtAuth, ViewsController.renderViewsProducts)
