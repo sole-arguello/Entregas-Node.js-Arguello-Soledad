@@ -8,9 +8,10 @@ export class CartsManagerMongo {
     async getCarts(){
         try {
             const resultado = await this.model.find();
+            console.log('getCarts con exito', resultado);
             return resultado;
         } catch (error) {
-            console.log('get carrito', error.message);
+            console.log('error en manager get carrito: ', error.message);
             throw new Error('No se pudo obtener el listado de los carritos ', error.message);
         }   
     }
@@ -19,19 +20,21 @@ export class CartsManagerMongo {
 
         try {//el id lo traigo igual que la DB _id
             const resultado = await this.model.findById(cartId).populate("products.productId").lean();
+            console.log('getCartsId con exito', resultado);
             return resultado;
         } catch (error) {
             console.log('get carrito', error.message);
-            throw new Error('No se pudo obtener el carrito ', error.message);
+            throw new Error('Error en manager getCartsId: ', error.message);
         }
     }
     async createCart(){
         try {
             const newCart = {}
             const cart = await this.model.create(newCart);
+            console.log('createCart con exito', cart);
             return cart
         } catch (error) {
-            console.log('crear carrito', error.message);
+            console.log('Error en manager createCart', error.message);
             throw new Error('No se pudo crear el carrito ', error.message);
         }
     }
@@ -51,12 +54,13 @@ export class CartsManagerMongo {
 
                 }
                 const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
+                console.log('addProduct con exito', result);
                 return result
             }else{
                 throw new Error("No se pudo encontrar el carrito");
             }
         } catch (error) {
-            console.log('agregar producto', error.message);
+            console.log('Error en manager addProduct', error.message);
             throw new Error('No se pudo agregar el producto ', error.message);
         }
     }
@@ -72,6 +76,7 @@ export class CartsManagerMongo {
                     cart.products = newProduct
 
                     const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                    console.log('updateCartId con exito', result);
                     return result
                 }
             }else{
@@ -79,7 +84,7 @@ export class CartsManagerMongo {
             }
             
         } catch (error) {
-            console.log('actualizar carrito completo', error.message);
+            console.log('Error en manager updateCartId', error.message);
             throw new Error('No se pudo actualizar el carrito ');
         }
     }
@@ -95,6 +100,7 @@ export class CartsManagerMongo {
                 if(productIndex >= 0){
                     cart.products[productIndex].quantity = newQuantity
                     const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                    console.log('updateProductInCart con exito', result);
                     return result
                 }else{
                     throw new Error("No se pudo encontrar el producto");
@@ -104,7 +110,7 @@ export class CartsManagerMongo {
             }
 
          } catch (error) {
-             console.log('actualizar carrito', error.message);
+             console.log('Error en manager updateProductInCart', error.message);
              throw new Error('No se pudo actualizar el carrito ', error.message);
          }
     }
@@ -119,9 +125,10 @@ export class CartsManagerMongo {
                 await this.model.findByIdAndDelete(cartId)
             }
             const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
+            console.log('deleteCartId con exito', result);
             return result;
         } catch (error) {
-            console.log('eliminar carrito', error.message);
+            console.log('Error en manager deleteCartId:', error.message);
             throw new Error('No se pudo eliminar el carrito ', error.message);
         }
     }
@@ -137,6 +144,7 @@ export class CartsManagerMongo {
                     const newProducts = cart.products.filter((prod) => prod.productId._id != productId);
                     cart.products = newProducts
                     const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
+                    console.log('deleteProductInCart con exito', result);
                     return result
                 }else{
                     throw new Error("No se pudo encontrar el producto a eliminar");
@@ -146,7 +154,7 @@ export class CartsManagerMongo {
             }
 
         } catch (error) {
-            console.log('eliminar carrito', error.message);
+            console.log('Error en manager deleteProductInCart', error.message);
             throw new Error('No se pudo eliminar el producto del carrito ', error.message);
         }
     }

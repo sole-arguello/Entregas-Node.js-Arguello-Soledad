@@ -9,11 +9,12 @@ export class UsersManagerMongo {
     async createUsers(userInfo) {
         try {
             const newUser = await this.model.create(userInfo);
-            console.log('usuario creado');
+            //mensaje interno
+            console.log('createUsers con exito', newUser);          
             return newUser
 
         } catch (error) {
-            console.log('crear usuario', error.message);
+            console.log('Error en manager createUsers', error.message);
             throw new Error('No se pudo crear el usuario', error.message);
         }
         
@@ -21,9 +22,10 @@ export class UsersManagerMongo {
     async getUserByEmail(email){
         try {
             const user = await this.model.findOne({email})
+            console.log('getUserByEmail con exito', user);
             return user
         } catch (error) {
-            console.log('get user', error.message);
+            console.log('Error en manager getUserByEmail', error.message);
             throw new Error('El Usuario no se encuentra registrado', error.message);
         }
     }
@@ -33,9 +35,10 @@ export class UsersManagerMongo {
             if(!userExist){
                 throw new Error('El Usuario no se encuentra registrado');
             }
+            console.log('getUserById con exito', userExist);
             return userExist
         } catch (error) {
-            console.log('get user', error.message);
+            console.log('error en manager getUserById', error.message);
             throw new Error('El Usuario no se encuentra registrado', error.message);
         }
     }
