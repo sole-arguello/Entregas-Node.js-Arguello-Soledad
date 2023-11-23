@@ -26,7 +26,7 @@ export class UsersSessionsController {
             const token = generateToken(user);
             res.cookie('cookieLogin', token, {maxAge: 43200000, httpOnly: true});
             res.redirect('/');//redirecciono a home y ya tiene acceso a navegar en la page
-            console.log('Sesion iniciada');
+            console.log('Usuario Logueado', req.user.role);
         } catch (error) {
             res.render('login', {
                 style: "login.css",
