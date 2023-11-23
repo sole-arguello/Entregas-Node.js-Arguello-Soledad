@@ -1,0 +1,31 @@
+<section class="sectionChat">
+    <h1>Bienvenidos al Chat</h1>
+    <p class="error">{{error}}</p>
+    {{!-- para mostrar quein se conecta --}}
+    <p>Usuario <span class="userName" id="userName"></span> Conectado</p>
+
+    <div class="containerChat">
+        <div class="formChat">
+            {{!-- para recibir los mensajes de los usuarios --}}
+            <input class="inputChat" type="text" id="inputMessage" placeholder="Escribe tu mensaje">
+            <button class="btnChat" id="btnSendMessage">Enviar</button>
+        </div>
+        {{!-- para mostar los mensajes de los usuarios --}}
+        <div class="chatPanel" id="chatPanel">
+            {{!-- los chat
+            parrafo usuario
+            parrafo mensaje
+             --}}
+        </div>
+    </div>
+</section>
+
+
+
+
+{{!-- importo socket del lado del cliente --}}
+<script src="/socket.io/socket.io.js"></script>
+{{!-- libreria de sweetalert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{!-- conecto el front --}}
+<script src="/js/chat.js"></script>

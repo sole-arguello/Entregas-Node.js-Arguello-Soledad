@@ -1,0 +1,43 @@
+.sectionHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userAdmin{
+    color: rgb(95, 5, 65);
+}
+.rolAdmin{
+   color: rgb(12, 131, 228); 
+}
+.user{
+    color: blueviolet;
+}
+.rolUser{
+    color: rgb(228, 127, 12);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.list{
+    padding: 0 .5rem;
+    border: 1px solid black;
+    border-radius: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .container{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .list{
+        margin: .5rem;
+        flex: 0 0 25%;
+    }
+    
+}

@@ -1,0 +1,34 @@
+<h1>Perfil del Usuario</h1>
+<p style="color: red">{{error}}</p>
+<p style="color: green">{{message}}</p>
+
+<div>
+    {{#if userAdmin}}
+        {{!-- usuario admin --}}
+        <P>Nombre: {{userFirst_name}}</P>
+        <p>Email: {{userEmail}}</p>
+        <p>Rol: {{userRole}}</p>
+    {{/if}}
+
+    {{#if userGithub}}
+        {{!-- usuario github --}}
+        <P>Nombre: {{userFirst_name}}</P>
+        <p>Usuario: {{userUsername}}</p>
+        <p>Email: {{userEmail}}</p>
+        <p>Rol: {{userRole}}</p>
+            
+    {{/if}}
+
+    {{#if userUser}}
+        {{!-- usuario local --}}
+        <P>Nombre: {{userFirst_name}}</P>
+        <p>Apellido: {{userLast_name}}</p>
+        <p>Edad: {{userAge}}</p>
+        <p>Email: {{userEmail}}</p>
+        <p>Rol: {{userRole}}</p>
+    {{/if}}
+
+</div>
+
+
+<a href="api/sessions/logout">Cerrar Sesion</a>

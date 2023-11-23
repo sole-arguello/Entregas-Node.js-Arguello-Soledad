@@ -1,0 +1,54 @@
+.sectionChat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error{
+    color: red;
+}
+.userName{
+    color: rgb(57, 57, 240);
+}
+.containerChat{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formChat{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: .5rem;
+}
+.inputChat{
+
+}
+.btnChat{
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    color: blue;
+}
+.labelChat{
+    margin-top: 2rem;
+}
+.user{
+    color: rgb(161, 80, 80);
+}
+.chatPanel{
+    display: flex;
+    flex-direction: column;
+    padding: 0 .5rem;
+}
+.areaChat{
+    padding: .5rem;
+    border: 1px solid;
+    border-radius: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .chatPanel{
+        width: 50%;
+        align-items: center;
+    }  
+}

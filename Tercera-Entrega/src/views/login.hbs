@@ -1,0 +1,26 @@
+<section class="sectionLogin">
+    <h1 class="title">Login</h1>
+
+<span class="message">{{message}}</span>
+
+<span class="error">{{error}}</span>
+
+
+<form class="formLogin" action="/api/sessions/login" method="post" >
+    
+    <label class="label" for="email">Correo electronico:</label>
+    <br>
+    <input type="email" name="email" placeholder="Email">
+    <br><br>
+
+    <label class="label" for="password">Contraseña:</label>
+    <br>
+    <input type="password" name="password" placeholder="Contraseña"><br><br>
+
+
+    <button class="btnLogin">Iniciar Sesión</button>
+
+    <p>No tienes una cuenta? Registrate <a class="aqui" href="/register">aqui</a></p>
+
+</form>
+</section>

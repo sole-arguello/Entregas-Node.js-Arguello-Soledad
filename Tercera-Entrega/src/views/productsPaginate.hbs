@@ -1,0 +1,39 @@
+<section class="sectionProducts">
+    <h1>Productos Con Paginacion</h1>
+
+    <span class="error">{{error}}</span>
+
+    <a class="btnCart" href="/cart/6525e395443bd76c765dd0ee">Ver carrito</a>
+
+    <div class="containerProducts">
+        {{#each payload.docs}}
+            
+            <div class="listPaginate">
+                <p>Imagen: {{this.thumbnail}}</p>
+                <p>Nombre Producto: {{this.title}}</p>
+                <p>Precio: {{this.price}}</p>
+                <p>Descripcion: {{this.description}}</p>
+                <p>Code: {{this.code}}</p>
+                <p>Stock: {{this.stock}}</p>
+                <p>Categoria: {{this.category}}</p>
+                <button class="btnProducts" onclick="addToCart(`{{this._id}}`)">agregar al carrito</button>
+            </div>
+
+        {{/each}}
+    </div>
+
+    <div class="containerBtn">
+        {{#if prevLink}}
+
+            <a class="btnLink" href="{{prevLink}}">Anterior</a>
+        {{/if}}
+
+        {{#if nextLink}}
+            <a class="btnLink" href="{{nextLink}}">Siguiente</a>
+        {{/if}}
+    </div>
+</section>
+
+
+
+<script src="/js/productsPaginate.js"></script>

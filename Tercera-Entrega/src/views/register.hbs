@@ -1,0 +1,32 @@
+<h1>Registro de Usuarios</h1>
+
+<p style="color: red;">{{error}}</p>
+
+
+<p>Ya tienes una cuenta? <a href="/login">Iniciar Sesión</a></p>
+
+<form action="/api/sessions/register" method="post">
+
+    <label for="first_name">Nombre:</label><br>
+    <input type="text" name="first_name"><br><br>
+
+    <label for="last_name">Apellido:</label><br>
+    <input type="text" name="last_name"><br><br>
+
+    <label for="age">Edad:</label><br>
+    <input type="number" name="age"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label for="password">Contraseña:</label><br>
+    <input type="password" name="password"><br><br>
+
+    <button>Registrarse</button>
+
+</form>
+
+<a href="/api/sessions/register-github">
+
+    <button>Registrarse con GitHub</button>
+</a>

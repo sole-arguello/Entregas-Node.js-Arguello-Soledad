@@ -1,0 +1,22 @@
+[
+	{
+		"title": "producto 1",
+		"description": "descripcion 1",
+		"price": 2300,
+		"code": "DRT524",
+		"thumbnail": "img 1",
+		"stock": "10",
+		"category": "categoria 1",
+		"id": 1
+	},
+	{
+		"title": "producto 2",
+		"description": "descripcion 2",
+		"price": 4589,
+		"code": "POI785",
+		"thumbnail": "img 2",
+		"stock": "10",
+		"category": "categoria 2",
+		"id": 2
+	}
+]

@@ -1,0 +1,14 @@
+/* .title{
+    text-align: center;
+}
+
+
+
+.subtitle{
+    text-align: center;
+} */
+.productList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+}

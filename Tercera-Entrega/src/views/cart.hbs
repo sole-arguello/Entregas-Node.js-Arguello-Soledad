@@ -1,0 +1,22 @@
+<h1>Carrito de productos</h1>
+
+<ul>
+    {{#each products}}
+
+        <li>
+            <p>Nomobre de producto: {{this.productId.title}}</p>
+            <p>Descripción del producto: {{this.productId.description}}</p>
+            <p>Precio del producto: {{this.productId.price}}</p>
+            <p>Imagen del producto: {{this.productId.thumbnail}}</p>
+            <p>Coigo del producto: {{this.productId.code}}</p>
+            <p>Stock: {{this.productId.stock}}</p>
+            <p>categotia: {{this.productId.category}}</p>
+            <p>Cantidad: {{this.quantity}}</p>
+            <button onclick="deleteProduct(`{{this.productId._id}}`)">Eliminar producto</button>
+        </li>
+
+
+    {{/each}}
+</ul>
+
+<script src="/js/cart.js"></script>
