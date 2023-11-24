@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { CartsController } from '../controller/carts.controller.js';
-import { authorization } from '../middlewares/auth.js';
+import { authorization, jwtAuth} from '../middlewares/auth.js';
 
 
 const router = Router()
@@ -18,7 +18,7 @@ router.get("/", CartsController.getCarts)
   router.put("/:cid", CartsController.updateCartId)
   
   //http://localhost:8080/api/carts/:cid/product/:pid para agregar productos al carrito
-  router.put("/:cid/product/:pid", authorization(['user']),CartsController.addProduct)
+  router.put("/:cid/product/:pid", jwtAuth, authorization(['user']),CartsController.addProduct) 
 
   
   //http://localhost:8080/api/carts/:cid/products/:pid //ruta que actualiza el produto del carrito por su id
@@ -28,7 +28,11 @@ router.get("/", CartsController.getCarts)
   router.delete("/:cid", CartsController.deleteCartId)
 
 //http://localhost:8080/api/carts/:cid/products/:pid   // Ruta para eliminar un producto específico de un carrito por su ID de carrito y producto
-  router.delete("/:cid/products/:pid", CartsController.deleteProductInCart)
+  router.delete("/:cid/products/:pid",jwtAuth, authorization(['user']), CartsController.deleteProductInCart)
+
+//------------------- Ruta para crear un tiket
+router.post('/:cid/purchase', CartsController.purchaseCart)
+
 
 
 export { router as cartsRouter}
