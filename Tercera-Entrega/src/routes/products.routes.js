@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', ProductsController.getProducts)
 
-router.get('/:id', ProductsController.getProductsId)
+router.get('/:id', ProductsController.getProductById)
 
 //todas estas rutas llevan autorizacion
 //localhost:8080/api/products

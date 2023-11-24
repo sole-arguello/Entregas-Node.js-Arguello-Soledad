@@ -3,6 +3,15 @@ import { ProductsService} from '../service/products.service.js'
 
 export class ProductsController {
 
+    static createProduct = async (req, res) => {
+        try {
+            const product = req.body;
+            const newProduct = await ProductsService.createProduct(product);
+            res.json({ message: "Producto creado", data: newProduct });
+        } catch (error) {
+            res.json( { status: "error", message: error.message });
+        }
+    }
     static getProducts = async (req, res) => {
         try {
             const products = await ProductsService.getProducts()
@@ -11,20 +20,11 @@ export class ProductsController {
             res.json( { status: "error", message: error.message });
         }
     }
-    static getProductsId = async (req, res) => {
+    static getProductById = async (req, res) => {
         try {
             const productId = req.params.id;
-            const products = await ProductsService.getProductsId(productId);
+            const products = await ProductsService.getProductById(productId);
             res.json({ message: "Listado de productos", data: products });
-        } catch (error) {
-            res.json( { status: "error", message: error.message });
-        }
-    }
-    static createProduct = async (req, res) => {
-        try {
-            const product = req.body;
-            const newProduct = await ProductsService.createProduct(product);
-            res.json({ message: "Producto creado", data: newProduct });
         } catch (error) {
             res.json( { status: "error", message: error.message });
         }
