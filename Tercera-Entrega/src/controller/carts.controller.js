@@ -1,4 +1,5 @@
 import { CartsService } from "../service/carts.service.js";
+import { v4 as uuidv4 } from 'uuid';
 
 export class CartsController {
     static getCarts = async (req, res) => {
@@ -84,4 +85,50 @@ export class CartsController {
             res.json({ status: "error",  message: error.message });
         }
     }
+    static purchaseCart = async (req, res) => {
+        try {
+            const { cid: idCarts } = req.params;
+            const cart = await CartsService.getCartsId(idCarts);
+            
+            console.log(cart);
+            if(cart.products.length){
+                const ticketProducts = []
+                const rejectedProducts = []
+                //varifico el stock de cada producto
+                for(let i = 0; i < cart.products.length; i++){
+                    const cartProduct = cart.products[i]
+                    const productInfo = cartProduct.productId
+                    //console.log('Info:', productInfo); 
+                    //comparo cada producto quantity con el stock
+                    if(cartProduct.quantity <= productInfo.stock){
+                        ticketProducts.push(cartProduct) //el que tiene stock de 20                     
+                    }else{
+                        rejectedProducts.push(cartProduct)//el que tiene stock de 10
+                    }
+
+                }
+                console.log('tiketProducts:', ticketProducts);
+                console.log('rejectedProducts:', rejectedProducts);
+
+                const newTicket = {
+                    code: uuidv4(), 
+                    purchase_datetimr: new Date(),
+                    amount: ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0),
+                    purchaser: req.user.email,
+                }
+                console.log('newTicket:', newTicket);
+                res.json({ status: "success", message: "Compra realizada", data: newTicket });
+            }else{
+                res.json({ status: "error", message: "El carrito no tiene productos" });
+            }
+        }
+        catch (error) {
+            res.json({ status: "error",  message: error.message });
+        } 
+    }
 }
+
+//if(product.stock < cart.products[i].quantity){
+    //     res.json({ status: "error", message: "El stock del producto " + product.title + " es insuficiente" });
+    // const productDB = await ProductsService.getProduct(productCart.pid);
+    // const product = await ProductsService.getProductById(cart.products[i].pid);
