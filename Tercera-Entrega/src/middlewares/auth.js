@@ -4,10 +4,13 @@ import passport from "passport";
 export const  authorization = (roles) => {
 
     return (req, res, next) => {
+        console.log("Usuario logueado", req.user)
         if (!roles.includes(req.user.role)) {
-            return res.status(403).json({ message: 'No autorizado' });
+            res.json({status: 'error', message: 'No autorizado para realizar esta accion'})
+        }else{
+            next();
         }
-        next();
+        
     }
     
 }
