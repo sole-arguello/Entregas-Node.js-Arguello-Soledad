@@ -4,7 +4,7 @@ import passport from "passport";
 export const  authorization = (roles) => {
 
     return (req, res, next) => {
-        console.log("Usuario logueado", req.user)
+        console.log("Tipo de Usuario logueado", req.user.role)
         if (!roles.includes(req.user.role)) {
             res.json({status: 'error', message: 'No autorizado para realizar esta accion'})
         }else{
