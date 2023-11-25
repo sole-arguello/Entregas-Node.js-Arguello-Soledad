@@ -1,4 +1,5 @@
 import { cartsModel } from "./models/carts.model.js";
+import { v4 as uuidv4 } from 'uuid';
 
 export class CartsManagerMongo {
     
@@ -158,6 +159,50 @@ export class CartsManagerMongo {
             throw new Error('No se pudo eliminar el producto del carrito ', error.message);
         }
     }
-    
 
+    async purchaseCart(cartId){
+        try {
+            const cart = await this.getCartsId(cartId);
+
+            //verifico si el carrito tiene productos
+            if(cart.products.length){
+                const ticketProducts = []
+                const rejectedProducts = []
+                //verifico el stock de cada producto del carrito
+                for(let i = 0; i < cart.products.length; i++){
+                    const cartProduct = cart.products;
+                    const productInfo = cartProduct.productId
+                    
+                    //comparo la cantidad comprada con el stock disponible
+                    if(cartProduct.quantity <= productInfo.stock){
+                        //resto el stock 
+                        quantityCart -= stockProduct
+                        ticketProducts.push(cartProduct)
+                        await this.updateProductInCart(cartId, productInfo, quantityCart)
+                    }else{
+                        rejectedProducts.push(cartProduct)
+                    }
+                }
+                console.log('ticketProducts', ticketProducts);
+                console.log('rejectedProducts', rejectedProducts);
+
+                const newTicket = {
+                    code: uuidv4(), 
+                    purchase_datetimr: new Date(),
+                    amount: ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0),
+                    //incluyo en el purchase el email del usuario logueado con jwt
+                    purchaser: req.params.email,
+                } 
+                console.log('newTicket', newTicket);
+                return newTicket              
+        
+            }else{
+                throw new Error('El carrito se encuntra vacio');
+            }
+            
+        } catch (error) {
+            throw new Error('No se encontro el carrito', error.message);``
+        }
+    }
+    
 }
