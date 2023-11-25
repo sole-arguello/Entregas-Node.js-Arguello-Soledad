@@ -1,6 +1,6 @@
 import { CartsService } from "../service/carts.service.js";
 import { ProductsService } from "../service/products.service.js";
-//import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export class CartsController {
     static getCarts = async (req, res) => {
@@ -90,13 +90,14 @@ export class CartsController {
     }
     static purchaseCart = async (req, res) => {
         try {
-
+//------- comentar para probar lo de abajo
             const { cid: idCarts } = req.params;
             const cartTiket = await CartsService.purchaseCart(idCarts);
             res.json({ message: "Compra realizada con exito", data: cartTiket });
 
 
-            /******** FUNCIONA */
+/******** FUNCIONA salvo el purchaser, y no impacta en DB*/
+            // 
             // const { cid: idCarts } = req.params;
             // const cart = await CartsService.getCartsId(idCarts)
             
@@ -114,7 +115,7 @@ export class CartsController {
             //         //comparo cada producto quantity con el stock
             //         if(cartProduct.quantity <= productInfo.stock){
             //             //restar el stock del carrito
-            //             //productInfo.stock -= cartProduct.quantity
+            //             productInfo.stock -= cartProduct.quantity
             //             ticketProducts.push(cartProduct)
 
             //             //actualizo el stock en la 
@@ -131,11 +132,11 @@ export class CartsController {
             //         code: uuidv4(), 
             //         purchase_datetimr: new Date(),
             //         amount: ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0),
-            //         //incluyo en el purchase el email del usuario logueado con jwt
-            //         purchaser: req.params.email,
+            //         purchaser: req.user.email,
             //     }
             //     console.log('newTicket:', newTicket);
-            //     res.json({ status: "success", message: "Compra realizada", data: newTicket, ticketProducts });
+            //     res.json({ status: "success", message: "Compra realizada", data: newTicket });
+                
             // }else{
             //     res.json({ status: "error", message: "El carrito no tiene productos" });
             // }

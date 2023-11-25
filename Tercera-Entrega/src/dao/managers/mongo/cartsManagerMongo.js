@@ -160,9 +160,13 @@ export class CartsManagerMongo {
         }
     }
 
-    async purchaseCart(cartId){
+    async purchaseCart(cartId, purchaser){
         try {
             const cart = await this.getCartsId(cartId);
+
+            console.log('cart product', cart.products);
+//------ no me muetra nada este console.log
+            //console.log('product info', cart.products.productId._id);
 
             //verifico si el carrito tiene productos
             if(cart.products.length){
@@ -171,13 +175,18 @@ export class CartsManagerMongo {
                 //verifico el stock de cada producto del carrito
                 for(let i = 0; i < cart.products.length; i++){
                     const cartProduct = cart.products;
-                    const productInfo = cartProduct.productId
+
+//----- no recibo la informacion
+                    const productInfo = cartProduct.productId._id
+                    console.log('productInfo', productInfo);
                     
                     //comparo la cantidad comprada con el stock disponible
                     if(cartProduct.quantity <= productInfo.stock){
                         //resto el stock 
                         quantityCart -= stockProduct
                         ticketProducts.push(cartProduct)
+
+//---pretendo reutilizar para actualizar el stock despues de la compra
                         await this.updateProductInCart(cartId, productInfo, quantityCart)
                     }else{
                         rejectedProducts.push(cartProduct)
@@ -190,8 +199,8 @@ export class CartsManagerMongo {
                     code: uuidv4(), 
                     purchase_datetimr: new Date(),
                     amount: ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0),
-                    //incluyo en el purchase el email del usuario logueado con jwt
-                    purchaser: req.params.email,
+                    //purchaser: ,
+//no logro traer el purchaser
                 } 
                 console.log('newTicket', newTicket);
                 return newTicket              
