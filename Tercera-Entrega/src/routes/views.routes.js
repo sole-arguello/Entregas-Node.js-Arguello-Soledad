@@ -16,8 +16,8 @@ router.get('/register', ViewsController.renderViewsRegister)
 //ruta para el perfil de usuario
 router.get('/profile', jwtAuth, ViewsController.renderViewsProfile)
 
-//ruta para productos en tiempo real Eliminar 
-router.get('/realTimeProducts', jwtAuth, ViewsController.renderViewsRealTime)
+//ruta para productos en tiempo real crear y Eliminar 
+router.get('/realTimeProducts', jwtAuth, authorization(['admin']),ViewsController.renderViewsRealTime)
 
 //message para linkear / caht es la renderizacion hacia el chat 
 router.get('/message', jwtAuth, authorization(['user']),ViewsController.renderViewsMessage)
