@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 
-const ticketsCollection = 'tickets';
+const tiketsCollection = 'tikets';
 
-const ticketSchema = new mongoose.Schema({
+const tiketSchema = new mongoose.Schema({
     
     code:{
         type: String,
@@ -25,4 +25,4 @@ const ticketSchema = new mongoose.Schema({
     
 })
 
-export const ticketsModel = mongoose.model(ticketsCollection, ticketSchema);
+export const tiketsModel = mongoose.model(tiketsCollection, tiketSchema);
