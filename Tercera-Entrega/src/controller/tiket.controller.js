@@ -21,6 +21,7 @@ export class TiketController {
             res.json({ message: "Listado de tikets", data: tiket });
             
         } catch (error) {
+            console.log('error getTiket controller', error.message);
             res.json({ status: "error", message: error.message });
         }
     }
@@ -32,6 +33,7 @@ export class TiketController {
             res.json({ message: "Listado de tikets", data: tiket });
             
         } catch (error) {
+            console.log('error getTiketById controller', error.message);
             res.json({ status: "error", message: error.message });
         }
     }
