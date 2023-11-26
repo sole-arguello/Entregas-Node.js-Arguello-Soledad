@@ -11,4 +11,7 @@ export class UsersSessionsService {
     static getUserById(id){
         return usersDao.getUserById(id)
     }
+    static getUsers(){
+        return usersDao.getUsers()
+    }
 }
