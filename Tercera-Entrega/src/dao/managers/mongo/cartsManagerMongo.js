@@ -8,7 +8,7 @@ export class CartsManagerMongo {
     async getCarts(){
         try {
             const resultado = await this.model.find();
-            console.log('getCarts con exito', resultado);
+            console.log('getCarts ok');
             return resultado;
         } catch (error) {
             console.log('error en manager get carrito: ', error.message);
@@ -20,7 +20,7 @@ export class CartsManagerMongo {
 
         try {//el id lo traigo igual que la DB _id
             const resultado = await this.model.findById(cartId).populate("products.productId").lean();
-            console.log('getCartsId con exito', resultado);
+            console.log('getCartsId ok');
             return resultado;
         } catch (error) {
             console.log('get carrito', error.message);
@@ -31,7 +31,7 @@ export class CartsManagerMongo {
         try {
             const newCart = {}
             const cart = await this.model.create(newCart);
-            console.log('createCart con exito', cart);
+            console.log('createCart ok');
             return cart
         } catch (error) {
             console.log('Error en manager createCart', error.message);
@@ -41,22 +41,26 @@ export class CartsManagerMongo {
     //metodo que agrega productos al carrito
     async addProduct(cartId, productId) {
         try {
-            let quantity = 1
-            const cart = await this.model.findById(cartId);
+            let quantity = 1;
+            const cart = await this.getCartsId(cartId);
 
             if(cart){
+                
                 const { products } = cart;
-                const productExist = products.find((prod) => prod.productId == productId);
+                const productExist = products.find((prod) => prod.productId._id.toString() === productId);
                 if(productExist){
-                    productExist.quantity += quantity;
+                    //si existe el producto, se suma la cantidad
+                    productExist.quantity += 1;
                 }else{
                     cart.products.push({ productId: productId, quantity: quantity }); 
 
                 }
-                const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
-                console.log('addProduct con exito', result);
+                const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true }).populate('products.productId');
+                
+                console.log('addProduct ok');
                 return result
             }else{
+                console.log('error en manager addProduct');
                 throw new Error("No se pudo encontrar el carrito");
             }
         } catch (error) {
@@ -76,10 +80,11 @@ export class CartsManagerMongo {
                     cart.products = newProduct
 
                     const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
-                    console.log('updateCartId con exito', result);
+                    console.log('updateCartId ok');
                     return result
                 }
             }else{
+                console.log('error en manager updateCartId');
                 throw new Error("No se pudo encontrar el carrito");
             }
             
@@ -95,17 +100,19 @@ export class CartsManagerMongo {
             const cart = await this.getCartsId(cartId)
             if(cart){
             
-                const productIndex =  cart.products.findIndex((prod) => prod.productId._id == productId)
+                const productIndex =  cart.products.findIndex((prod) => prod.productId._id.toString() == productId.toString())
                           
                 if(productIndex >= 0){
                     cart.products[productIndex].quantity = newQuantity
                     const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
-                    console.log('updateProductInCart con exito', result);
+                    console.log('updateProductInCart ok');
                     return result
                 }else{
+                    console.log('error en manager updateProductInCart');
                     throw new Error("No se pudo encontrar el producto");
                 }
             }else{
+                console.log('error en manager updateProductInCart');
                 throw new Error("No se pudo encontrar el carrito");
             }
 
@@ -117,15 +124,17 @@ export class CartsManagerMongo {
     
     //metodo para elimina el carrito
     async deleteCartId(cartId) {
+        console.log('deleteCartId');
         try {
             const cart = await this.getCartsId(cartId);
             if (!cart) {
+                console.log('error en manager deleteCartId');
                 throw new Error("No se pudo encontrar el carrito a eliminar");
             }else{
                 await this.model.findByIdAndDelete(cartId)
             }
             const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
-            console.log('deleteCartId con exito', result);
+            console.log('deleteCartId');
             return result;
         } catch (error) {
             console.log('Error en manager deleteCartId:', error.message);
@@ -136,20 +145,23 @@ export class CartsManagerMongo {
     //DELETE api/carts/:cid/products/:pid deberá eliminar del carrito el producto seleccionado.
     async deleteProductInCart(cartId, productId) {
         try {
-            const cart = await this.model.findById(cartId);
+        
+            const cart = await this.getCartsId(cartId);
             
             if(cart){
-                const productExist = cart.products.find((prod) => prod.productId._id == productId);
+                const productExist = cart.products.find((prod) => prod.productId._id.toString() === productId.toString());
                 if (productExist) {
-                    const newProducts = cart.products.filter((prod) => prod.productId._id != productId);
+                    const newProducts = cart.products.filter((prod) => prod.productId._id.toString() != productId.toString());
                     cart.products = newProducts
-                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true });
-                    console.log('deleteProductInCart con exito', result);
+                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true }).populate('products.productId');
+                    console.log('deleteProductInCart');
                     return result
                 }else{
+                    console.log('error en manager deleteProductInCart');
                     throw new Error("No se pudo encontrar el producto a eliminar");
                 }
             }else{
+                console.log('error en manager deleteProductInCart');
                 throw new Error("No se pudo encontrar el producto en el carrito");
             }
 
