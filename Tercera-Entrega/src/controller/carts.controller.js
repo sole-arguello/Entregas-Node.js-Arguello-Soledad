@@ -153,6 +153,7 @@ export class CartsController {
                     amount: total,
                    // purchaser: req.user.email,
                 }
+                
                 console.log('Compra realizada newTicket:', newTicket);
                 const tiket = await TiketService.createTiket(newTicket);
                 res.json({ status: "success", message: "Compra realizada", data: tiket });
