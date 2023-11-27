@@ -5,7 +5,7 @@ export class TiketManagerMongo {
         this.model = tiketModel
     }
 
-    async createTicket(tiketBody){
+    async createTiket(tiketBody){
         try {
             const tiket = await this.model.create({tiketBody});
             console.log('createTiket con exito', tiket);
