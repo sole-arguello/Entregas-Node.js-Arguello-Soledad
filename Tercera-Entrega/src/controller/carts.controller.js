@@ -63,8 +63,7 @@ export class CartsController {
             console.log('addProduct controller');
             const { cid: idCarts, pid: idProduct } = req.params;
             const cart = await CartsService.getCartsId(idCarts);
-            const product = await ProductsService.getProductById(idProduct);
-            const result = await CartsService.addProduct(cart, product);
+            const result = await CartsService.addProduct(cart, idProduct);
             res.json({ message: "Producto agregado al carrito", data: result });
         } catch (error) {
             console.log('error addProduct controller', error.message);
@@ -112,22 +111,25 @@ export class CartsController {
     static purchaseCart = async (req, res) => {
         try {
             console.log('purchaseCart controller');
-
             const { cid: idCarts } = req.params;;
             const cart = await CartsService.getCartsId(idCarts)
-            //console.log('carrito con los productos a comprar:', cart);
-
-            if(cart.products.length){//existe el carrito no vacio
+            //console.log('carrito con los productos a comprar:', cart); 
+            const userId = req.user._id.toString()
+            const user = await UsersSessionsService.getUserById(userId)  
+            console.log('user:', user);
+            
+            
+            //existe el carrito no vacio
+            if(cart.products.length){
                 //tiket de la compra y los rechazados
                 const ticketProducts = []
                 const rejectedProducts = []
                 //varifico el stock de cada producto
                 for(let i = 0; i < cart.products.length; i++){
-
                     const cartProduct = cart.products[i]
-                    console.log('Productos en carrito:', cartProduct);
-                    const productInfo = cartProduct.productId
-                    console.log('informacion del producto:', productInfo);
+                    //console.log('Productos en carrito:', cartProduct);
+                    const productInfo = cartProduct.productId._id.toString()
+                    //console.log('informacion del producto:', productInfo);
 
                     //comparo la quantity con el stock
                     if(cartProduct.quantity <= productInfo.stock){
@@ -135,32 +137,68 @@ export class CartsController {
                         ticketProducts.push(cartProduct)
                         //resto el stock del producto comprado
                         productInfo.stock -= cartProduct.quantity
-                        //actualizo el stock en la 
-                        //await ProductsService.updateProduct(productInfo, ticketProducts[i].productId)                        
+                        //actualizo el stock en la base de datos
+                        await ProductsService.updateProduct(productInfo._id, ticketProducts[i].productId)
+                        
                     }else{
                         //agrego los productos rechazados
                         rejectedProducts.push(cartProduct)
                     }
                 }
-                console.log('tiketProducts:', ticketProducts);
-                console.log('rejectedProducts:', rejectedProducts);
-                //calculo el total de la compra
-                const total = ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0)
-
-                const newTicket = {
-                    code: uuidv4(), 
-                    purchase_datetime: new Date(),
-                    amount: total,
-                    purchaser: 'pedro',
+                //console.log('tiketProducts:', ticketProducts);
+                //console.log('rejectedProducts:', rejectedProducts);
+                let total;
+                for(let i=0; i < ticketProducts.length; i++){
+                    //calculo el total de la compra y creo el tiket
+                    total = ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0)
                 }
-                
-                console.log('Compra realizada newTicket:', newTicket);
-                const tiket = await TiketService.createTiket(newTicket);
-                res.json({ status: "success", message: "Compra realizada", data: tiket });
-                
+                if(ticketProducts.length >= 1){
+                    const newTicket = {
+                        code: uuidv4(), 
+                        purchase_datetime: new Date(),
+                        amount: total,
+                        purchaser: user.email,
+                    }
+                    //creo el tiket en la base de datos
+                    const tiket = await TiketService.createTiket(newTicket);
+                    console.log('Compra realizada Ticket:', tiket);
+                    res.json({ status: "success", message: "Compra realizada", data: tiket });
+                }
+                //actualizo el stock de los productos rechazados
+                if(rejectedProducts.length >= 1 && ticketProducts.length >= 1){
+                    for(let i=0; i < ticketProducts.length; i++){
+                        //datos del producto en el carrito, id del producto y el stock
+                        let prodInTiket = ticketProducts[i]
+                        let productId = prodInTiket.productId._id.toString()  
+                        //controlo stock
+                        let stock = prodInTiket.productId.stock 
+                        //actualizo el stock de los rechazados
+                        await ProductsService.updateProduct(productId, stock)                     
+                        //elimino el procucto comprado del carrito
+                        await CartsService.deleteProductInCart(idCarts, productId);
+                    }
+                    res.json({ status: "success", 
+                    message: "Compra realizada, pero algunos productos no tienen stock", data: rejectedProducts });
+                }else if(rejectedProducts.length >= 1 && ticketProducts.length == 0){//
+                    console.log('Controller Purchase, productos rechazados por falta de stock');
+                    res.json({ status: "error", 
+                    message: "No es posible concretar la venta, por fatla de stock", data: rejectedProducts });
+                }else{
+                    //no hay productos en el carrito
+                    for(let i=0; i < ticketProducts.length; i++){
+                        //datos del producto en el carrito, id del producto y el stock
+                        let prodInTiket = ticketProducts[i]
+                        let productId = prodInTiket.productId._id.toString()
+                        //elimino el procucto comprado del carrito
+                        await CartsService.deleteProductInCart(idCarts, productId);
+                    }
+                    console.log('Controller Purchase ok, compra realizada');
+                    res.json({ status: "success", message: "Compra realizada", data: ticketProducts });
+                }
+
             }else{
-                console.log('Controller Purchase El carrito no tiene productos');
-                res.json({ status: "error", message: "El carrito no tiene productos" });
+                console.log('Controller Purchase ok, carrito vacio');
+                res.json({ status: "error", message: "Carrito vacio" });
             }
         }
         catch (error) {
