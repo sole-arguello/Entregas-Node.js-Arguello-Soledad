@@ -35,7 +35,7 @@ export class ProductsManagerMongo{
         try {
             //uso el modelo definido y el metodo de mongo
             const resultado = await this.model.find().lean();//soluciona el bloqueo de handelbarspara mostrar en home
-            console.log('getProducts con exito', resultado);
+            console.log('getProducts ok');
             return resultado
         } catch (error) {
             //mensaje interno
