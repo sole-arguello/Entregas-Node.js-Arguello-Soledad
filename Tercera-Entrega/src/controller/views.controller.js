@@ -7,6 +7,7 @@ export class ViewsController {
             console.log('ususario logueado', req.user);
             //si no esta logeado lo redirige a login
             if(!req.user){
+                console.log('error al iniciar sesion');
                 res.render('login', 
                 { 
                     style: "login.css",
@@ -205,7 +206,9 @@ export class ViewsController {
         }
     }
     static renderViewsCart = async (req, res) => {
-        const cartId = '6525e395443bd76c765dd0ee'
+
+        
+        const cartId = '6525c4976ff5b06f9bbb8dbc'
         try {
             const cart = await CartsService.getCartsId(cartId);
             //console.log('Prueba en consola', cart);

@@ -25,4 +25,4 @@ const tiketSchema = new mongoose.Schema({
     
 })
 
-export const tiketsModel = mongoose.model(tiketsCollection, tiketSchema);
+export const tiketModel = mongoose.model(tiketsCollection, tiketSchema);

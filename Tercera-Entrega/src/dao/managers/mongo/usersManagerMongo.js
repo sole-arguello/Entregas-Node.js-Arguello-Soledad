@@ -32,7 +32,7 @@ export class UsersManagerMongo {
     }
     async getUserById(id){
         try {
-            const userExist = await this.model.findById(id).lean();
+            const userExist = await this.model.findOne({_id: id}).lean();
             console.log('getUserById con exito', userExist);
             if(!userExist){
                 throw new Error('El Usuario no se encuentra registrado');
@@ -42,6 +42,17 @@ export class UsersManagerMongo {
         } catch (error) {
             console.log('error en manager getUserById', error.message);
             throw new Error('El Usuario no se encuentra registrado', error.message);
+        }
+    }
+    async getUsers(){
+        
+        try {
+            const users = await this.model.find();
+            console.log('getUsers con exito');
+            return users
+        } catch (error) {
+            console.log('error en manager getUsers', error.message);
+            throw new Error('Los usuario no se encontraron', error.message);
         }
     }
 

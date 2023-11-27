@@ -1,4 +1,4 @@
-import { tiketModel } from "../models/tiket.model.js";
+import { tiketModel } from "../mongo/models/tikets.model.js";
 
 export class TiketManagerMongo {
     constructor(){
