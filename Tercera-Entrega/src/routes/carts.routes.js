@@ -18,7 +18,7 @@ router.get("/", CartsController.getCarts)
   router.put("/:cid", CartsController.updateCartId)
   
   //http://localhost:8080/api/carts/:cid/product/:pid para agregar productos al carrito
-  router.put("/:cid/product/:pid", jwtAuth, authorization(['user']),CartsController.addProduct) 
+  router.put("/:cid/product/:pid", jwtAuth, authorization(['user', 'admin']),CartsController.addProduct) 
 
   
   //http://localhost:8080/api/carts/:cid/products/:pid //ruta que actualiza el produto del carrito por su id
