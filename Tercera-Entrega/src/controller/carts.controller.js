@@ -149,9 +149,9 @@ export class CartsController {
 
                 const newTicket = {
                     code: uuidv4(), 
-                    purchase_datetimr: new Date(),
+                    purchase_datetime: new Date(),
                     amount: total,
-                   // purchaser: req.user.email,
+                    purchaser: 'pedro',
                 }
                 
                 console.log('Compra realizada newTicket:', newTicket);
