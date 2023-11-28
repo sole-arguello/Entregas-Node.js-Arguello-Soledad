@@ -100,7 +100,7 @@ export class CartsManagerMongo {
             const cart = await this.getCartsId(cartId)
             if(cart){
             
-                const productIndex =  cart.products.findIndex((prod) => prod.productId._id.toString() == productId.toString())
+                const productIndex =  cart.products.findIndex((prod) => prod.productId._id.toString() === productId)
                           
                 if(productIndex >= 0){
                     cart.products[productIndex].quantity = newQuantity
@@ -151,9 +151,10 @@ export class CartsManagerMongo {
             if(cart){
                 const productExist = cart.products.find((prod) => prod.productId._id.toString() === productId.toString());
                 if (productExist) {
-                    const newProducts = cart.products.filter((prod) => prod.productId._id.toString() != productId.toString());
+                    const newProducts = cart.products.filter((prod) => prod.productId._id.toString() !== productId.toString());
                     cart.products = newProducts
-                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true }).populate('products.productId');
+                    const result = await this.model.findByIdAndUpdate(cartId, cart, { new: true })
+                    .populate('products.productId');
                     console.log('deleteProductInCart');
                     return result
                 }else{

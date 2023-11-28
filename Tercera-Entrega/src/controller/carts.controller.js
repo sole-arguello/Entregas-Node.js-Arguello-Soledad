@@ -115,54 +115,94 @@ export class CartsController {
             const { cid: idCarts } = req.params;;
             const cart = await CartsService.getCartsId(idCarts)
             //console.log('carrito con los productos a comprar:', cart);
-            const users = await UsersSessionsService.getUsers()
-            console.log('users:', users);
+            // const users = await UsersSessionsService.getUsers()
+            // console.log('users:', users);
 
-            // if(cart.products.length){//existe el carrito no vacio
-            //     //tiket de la compra y los rechazados
-            //     const ticketProducts = []
-            //     const rejectedProducts = []
-            //     //varifico el stock de cada producto
-            //     for(let i = 0; i < cart.products.length; i++){
+            //verifico que el carrito no este vacio
+            if(cart.products.length > 0){
+                //tiket de la compra y los rechazados
+                const ticketProducts = []
+                const rejectedProducts = []
+                //varifico el stock de cada producto
+                for(let i = 0; i < cart.products.length; i++){
 
-            //         const cartProduct = cart.products[i]
-            //         //console.log('Productos en carrito:', cartProduct);
-            //         const productInfo = cartProduct.productId
-            //         //console.log('informacion del producto:', productInfo);
+                    const cartProduct = cart.products[i]
+                    //console.log('Productos en carrito:', cartProduct);
+                    const productInfo = cartProduct.productId
+                    //console.log('informacion del producto:', productInfo);
 
-            //         //comparo la quantity con el stock
-            //         if(cartProduct.quantity <= productInfo.stock){
-            //             //agrego el producto al tiket
-            //             ticketProducts.push(cartProduct)
-            //             //resto el stock del producto comprado
-            //            // productInfo.stock -= cartProduct.quantity
-            //             //actualizo el stock en la 
-            //             //await ProductsService.updateProduct(productInfo, ticketProducts[i].productId)                        
-            //         }else{
-            //             //agrego los productos rechazados
-            //             rejectedProducts.push(cartProduct)
-            //         }
-            //     }
-            //     console.log('tiketProducts:', ticketProducts);
-            //     console.log('rejectedProducts:', rejectedProducts);
-            //     //calculo el total de la compra
-            //     const total = ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0)
+                    //comparo la quantity con el stock
+                    if(cartProduct.quantity <= productInfo.stock){
+                        //console.log('Cantidad', cartProduct.quantity, 'stock', productInfo.stock);
+                        //agrego el producto al tiket
+                        ticketProducts.push(cartProduct)
+                       // console.log('tiketProducts:', ticketProducts);
+                        //resto el stock del producto comprado
+                        const newStock = productInfo.stock -= cartProduct.quantity
+                        //console.log('newStock:', newStock);
+                    }else{
+                        console.log('Guardo los Rechazado')
+                        //agrego los productos rechazados
+                        rejectedProducts.push(cartProduct)
+                    }
+                }
+                console.log('tiketProducts:', ticketProducts);
+                console.log('rejectedProducts:', rejectedProducts);
+                //calculo el total de la compra
+                const total = ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0)
+                //console.log('total:', total);
+                const newTicket = {
+                    code: uuidv4(), 
+                    purchase_datetimr: new Date(),
+                    amount: total,
+                   // purchaser: req.user.email,
+                }
+                console.log('Creo el tiket, Compra realizada newTicket:', newTicket);
+                // //const tiket = await TiketService.createTiket(newTicket);
+                // res.json({ status: "success", message: "Compra realizada", data: tiket });
+                if(rejectedProducts.length >=1 && ticketProducts.length >=1){
+                    console.log('Compra con Rechazos', rejectedProducts);
+                   
+                     //recorro el carrito para borrar los productos
+                    for(let i = 0; i < ticketProducts.length; i++){
+                        let productIdInCart = ticketProducts[i]
+                        let productId = productIdInCart.productId._id
+                        let stock = productIdInCart.productId.stock
+                        //console.log('productId:', productId, 'Id carrito:', idCarts, 'stock:', stock);
 
-            //     const newTicket = {
-            //         code: uuidv4(), 
-            //         purchase_datetimr: new Date(),
-            //         amount: total,
-            //        // purchaser: req.user.email,
-            //     }
-                
-            //     console.log('Compra realizada newTicket:', newTicket);
-            //     const tiket = await TiketService.createTiket(newTicket);
-            //     res.json({ status: "success", message: "Compra realizada", data: tiket });
-                
-            // }else{
-            //     console.log('Controller Purchase El carrito no tiene productos');
-            //     res.json({ status: "error", message: "El carrito no tiene productos" });
-            // }
+                        //actualizo el stock del producto
+                        await ProductsService.updateProduct(productId, stock);
+                        //elimino el producto del carrito
+                        await CartsService.deleteProductInCart(idCarts, productId)
+     
+                    }
+                    console.log('Compra realizada y borro el producto del carrito, dejo el rechazado', rejectedProducts);
+                    res.json({ status: "success", message: "Compra realizada, con rechazos", data: rejectedProducts });
+                }else if(rejectedProducts.length >=1 && ticketProducts.length == 0){
+                    console.log("no se puede comprar por falta de stock", rejectedProducts);
+                    res.json({ status: "error", message: "no se puede comprar por falta de stock", data: rejectedProducts });
+                    //aca implementar eliminar los rechazados
+                }else{
+                    for(let i = 0; i < ticketProducts.length; i++){
+                        let productIdInCart = ticketProducts[i]
+                        let productId = productIdInCart.productId._id
+                        let stock = productIdInCart.productId.stock
+                        //console.log('productId:', productId, 'Id carrito:', idCarts, 'stock:', stock);
+                        
+                        //actualizo el stock del producto
+                        await ProductsService.updateProduct(productId, stock)
+                        //elimino el producto del carrito
+                        await CartsService.deleteProductInCart(idCarts, productId)
+                      
+                    }
+                    console.log('compra realizada(sin rechazos), actualizo el stock y borro el producto del carrito'
+                    , ticketProducts);
+                    res.json({ status: "success", message: "compra realizda con exito", data: ticketProducts });
+                }
+            }else{
+                console.log('Controller Purchase,  El carrito esta vacio');
+                res.json({ status: "error", message: "El carrito no tiene productos" });
+            }
         }
         catch (error) {
             console.log('error purchaseCart controller', error.message);
