@@ -112,17 +112,16 @@ export class CartsController {
         try {
             console.log('Estoy en purchaseCart controller');
 
-            const { cid: idCarts } = req.params;;
+            const { cid: idCarts } = req.params;
             const cart = await CartsService.getCartsId(idCarts)
             //console.log('carrito con los productos a comprar:', cart);
-            // const users = await UsersSessionsService.getUsers()
-            // console.log('users:', users);
 
             //verifico que el carrito no este vacio
             if(cart.products.length > 0){
                 //tiket de la compra y los rechazados
                 const ticketProducts = []
                 const rejectedProducts = []
+
                 //varifico el stock de cada producto
                 for(let i = 0; i < cart.products.length; i++){
 
@@ -133,13 +132,13 @@ export class CartsController {
 
                     //comparo la quantity con el stock
                     if(cartProduct.quantity <= productInfo.stock){
-                        //console.log('Cantidad', cartProduct.quantity, 'stock', productInfo.stock);
+                        console.log('Cantidad', cartProduct.quantity, 'stock', productInfo.stock);
                         //agrego el producto al tiket
                         ticketProducts.push(cartProduct)
                        // console.log('tiketProducts:', ticketProducts);
                         //resto el stock del producto comprado
                         const newStock = productInfo.stock -= cartProduct.quantity
-                        //console.log('newStock:', newStock);
+                        console.log('newStock:', newStock);
                     }else{
                         console.log('Guardo los Rechazado')
                         //agrego los productos rechazados
@@ -150,29 +149,27 @@ export class CartsController {
                 console.log('rejectedProducts:', rejectedProducts);
                 //calculo el total de la compra
                 const total = ticketProducts.reduce((acc, item) => acc + item.quantity * item.productId.price, 0)
-                //console.log('total:', total);
+                console.log('total:', total);
                 const newTicket = {
                     code: uuidv4(), 
                     purchase_datetime: new Date(),
                     amount: total,
                     purchaser: req.user.email,
                 }
-                console.log('Creo el tiket, Compra realizada newTicket:', newTicket);
                 const tiket = await TiketService.createTiket(newTicket);
-                res.json({ status: "success", message: "Compra realizada", data: tiket });
+                //res.json({ status: "success", message: "Compra realizada", data: tiket });
                 if(rejectedProducts.length >=1 && ticketProducts.length >=1){
                     console.log('Compra con Rechazos', rejectedProducts);
                    
-                     //recorro el carrito para borrar los productos
                     for(let i = 0; i < ticketProducts.length; i++){
                         //datos del producto, stock, y carrito
                         let productIdInCart = ticketProducts[i]
                         let productId = productIdInCart.productId._id
-                        let stock = productIdInCart.productId.stock
+                        let stock = productIdInCart.stock
                         //console.log('productId:', productId, 'Id carrito:', idCarts, 'stock:', stock);
 
                         //actualizo el stock del producto en db y limpio el carrito 
-                        await ProductsService.updateProduct(productId, stock)
+                        await ProductsService.updateProduct(productId, {stock: stock})
                         await CartsService.deleteProductInCart(idCarts, productId)
      
                     }
@@ -189,15 +186,14 @@ export class CartsController {
                         let stock = productIdInCart.productId.stock
                         //console.log('productId:', productId, 'Id carrito:', idCarts, 'stock:', stock);
                         
-                        //actualizo el stock del producto
-                        await ProductsService.updateProduct(productId, stock)
-                        //elimino el producto del carrito
+                        //actualizo el stock del producto y limpio el carrito
+                        await ProductsService.updateProduct(productId, {stock: stock})
                         await CartsService.deleteProductInCart(idCarts, productId)
                       
                     }
                     console.log('compra realizada(sin rechazos), actualizo el stock y borro el producto del carrito'
                     , ticketProducts);
-                    res.json({ status: "success", message: "compra realizda con exito", data: ticketProducts });
+                    res.json({ status: "success", message: "compra realizda con exito", data: ticketProducts, tiket });
                 }
             }else{
                 console.log('Controller Purchase,  El carrito esta vacio');
