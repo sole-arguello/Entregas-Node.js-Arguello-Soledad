@@ -31,7 +31,7 @@ router.get("/", CartsController.getCarts)
   router.delete("/:cid/products/:pid",jwtAuth, authorization(['user']), CartsController.deleteProductInCart)
 
 //------------------- Ruta para crear un tiket
-router.post('/:cid/purchase', CartsController.purchaseCart)
+router.post('/:cid/purchase',jwtAuth, authorization(['user']), CartsController.purchaseCart)
 
 
 
