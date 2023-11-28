@@ -110,7 +110,7 @@ export class CartsController {
     }
     static purchaseCart = async (req, res) => {
         try {
-            console.log('purchaseCart controller');
+            console.log('Estoy en purchaseCart controller');
 
             const { cid: idCarts } = req.params;;
             const cart = await CartsService.getCartsId(idCarts)
