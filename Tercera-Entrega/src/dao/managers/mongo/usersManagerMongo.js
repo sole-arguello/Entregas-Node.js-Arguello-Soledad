@@ -23,7 +23,7 @@ export class UsersManagerMongo {
     async getUserByEmail(email){
         try {
             const user = await this.model.findOne({email})
-            console.log('getUserByEmail con exito');
+            console.log('getUserByEmail ok');
             return user
         } catch (error) {
             console.log('Error en manager getUserByEmail', error.message);
@@ -32,14 +32,14 @@ export class UsersManagerMongo {
     }
     async getUserById(id){
         try {
-            const userExist = await this.model.findOne({_id: id} ).lean();
-            console.log('getUserById ok');
+            const userExist = await this.model.findById(id).lean();
+            console.log('getUserById ok', userExist);
             if(!userExist){
                 console.log('error en manager getUserById');
                 throw new Error('El Usuario no se encuentra registrado');
             }
-            userExist = userExist._id.toString();
-            console.log('getUserById con exito');
+            
+            console.log('getUserById con exito', userExist);
             return userExist
         } catch (error) {
             console.log('error en manager getUserById', error.message);
