@@ -178,7 +178,7 @@ export class CartsController {
                 }else if(rejectedProducts.length >=1 && ticketProducts.length == 0){
                     console.log("no se puede comprar por falta de stock", rejectedProducts);
                     res.json({ status: "error", message: "no se puede comprar por falta de stock", data: rejectedProducts });
-                    //aca implementar eliminar los rechazados
+                
                 }else{
                     for(let i = 0; i < ticketProducts.length; i++){
                         let productIdInCart = ticketProducts[i]
