@@ -1,0 +1,18 @@
+
+GET http://localhost:8080
+
+
+### POST
+POST http://localhost:8080/api/sessions/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+###
+POST http://localhost:8080/api/users/idUsers/documents
+Content-Type: application/json
+
+//hacerlo wen tundher y poner body - form - files y completar los capos
+// identificacion, domicilio, estadoDeCuenta y cargar los archivos

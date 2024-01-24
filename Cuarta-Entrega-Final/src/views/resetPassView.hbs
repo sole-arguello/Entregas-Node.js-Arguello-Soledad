@@ -1,0 +1,10 @@
+<h1>Restablece tu Contraseña</h1>
+<br>
+<p style="color: red;">{{error}}</p>
+<br>
+<p>Ingresa tu nueva contraseña</p>
+
+<form action="/api/sessions/reset-password?token={{token}}" method="post">
+    <input type="password" placeholder="Nueva Contraseña" name="newPassword">
+    <button>Restablecer Contraseña</button>
+</form>

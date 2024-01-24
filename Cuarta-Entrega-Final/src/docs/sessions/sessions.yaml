@@ -1,0 +1,73 @@
+paths:
+  /api/sessions/login:
+    post:
+      summary: Login
+      description: Endpoint to login
+      tags:
+        - Sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        200:
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+        500:
+          description: Internal server error
+
+
+
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          description: user Email
+        password:
+          type: string
+          description: user Password
+      example:
+        email: "pXuYj@example.com"
+        password: "123456"
+
+    ErrorAuthorization:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: "error"
+        message: "Unauthorized"
+  
+  requestBodies:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          description: user Email
+        password:
+          type: string
+          description: user Password
+      example:
+        email: "pXuYj@example.com"
+        password: "123456"
+
+
+
+
+
+

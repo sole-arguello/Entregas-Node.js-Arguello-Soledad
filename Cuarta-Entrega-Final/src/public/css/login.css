@@ -1,0 +1,40 @@
+.sectionLogin{
+
+    background: rgb(196, 236, 196);
+    width: 100%;
+    border: .5px solid rgb(243, 168, 168);
+    border-radius: .5em ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message{
+    color: green;
+}
+.error{
+    color: red;
+}
+.formLogin{
+    margin-top: 1rem;
+}
+.label{
+    font-size: .8rem;
+}
+.btnLogin{
+    border-radius: .5rem;
+    padding: .5rem ;
+    color: blue;
+    background: rgb(181, 181, 216);
+}
+.aqui{
+    text-decoration: none;
+    color: red;
+}
+
+@media screen and (min-width: 768px) {
+    .sectionLogin{
+        margin: 0 auto;
+        width: 50%;
+    }
+}

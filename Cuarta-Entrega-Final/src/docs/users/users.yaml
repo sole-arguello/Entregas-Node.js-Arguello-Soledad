@@ -1,0 +1,5 @@
+# schemas estructura del modulo, basado en el modelo de la base de datos
+# routes son los endpoints de la api
+# responses son las respuestas que el endpoint responde
+# inputs son el body que recibe un endpoint
+

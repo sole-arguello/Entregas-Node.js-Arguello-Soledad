@@ -1,0 +1,538 @@
+[31merror[39m: Operation `users.findOne()` buffering timed out after 10000ms
+[31merror[39m: Operation `users.findOne()` buffering timed out after 10000ms
+error: userEmail is not defined
+[31merror[39m: userEmail is not defined[31merror[39m: userEmail is not defined
+[31merror[39m: logger is not defined
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: chalk.orange is not a function
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: res.sen is not a function
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: chalk is not defined
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+{"level":"error","message":"Error fatal"}
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: Error fatal
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al registrar el usuario Cannot destructure property 'firts_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'firts_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'first_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'first_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'first_name' of 'req.body' as it is undefined.
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error en manager createUsers
+[31merror[39m: No se pudo crear el usuario
+[31merror[39m: Error en manager createUsers
+[31merror[39m: No se pudo crear el usuario
+[31merror[39m: Error en manager createUsers
+[31merror[39m: No se pudo crear el usuario
+[31merror[39m: Error en manager createUsers
+[31merror[39m: No se pudo crear el usuario
+[31merror[39m: error al registrar el usuario Cannot destructure property 'first_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'first_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'first_name' of 'req.body' as it is undefined.
+[31merror[39m: error al registrar el usuario Cannot destructure property 'first_name' of 'req.body' as it is undefined. {"stack":"TypeError: Cannot destructure property 'first_name' of 'req.body' as it is undefined.\n    at customRegister (file:///C:/Users/54351/OneDrive/Desktop/back/Desafios-Node.j-Arguello-Soledad/desafio-12-complementario/src/middlewares/auth.js:23:16)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\54351\\OneDrive\\Desktop\\back\\Desafios-Node.j-Arguello-Soledad\\desafio-12-complementario\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+[31merror[39m: Cannot destructure property 'first_name' of 'req.body' as it is undefined.
+[31merror[39m: logger.Error is not a function
+[31merror[39m: logger.Error is not a function
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: Cannot create property '_locals' on string 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbGVkYWQuYXIxQGdtYWlsLmNvbSIsImlhdCI6MTcwMjY0Mzg2NCwiZXhwIjoxNzAyNjQ0MTY0fQ.hplREemkRFeX-1pF0dLV7v52nHBB4mmV2gjlGwRoQOE'
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: No recipients defined
+[31merror[39m: error al iniciar sesion
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: error en sendChangePasswordEmail
+[31merror[39m: error en sendChangePasswordEmail {"error":"No recipients defined"}
+[31merror[39m: No recipients defined
+[31merror[39m: error al iniciar sesion
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: usersSessionsService.updatePassword is not a function
+[31merror[39m: No recipients defined
+[31merror[39m: Cast to ObjectId failed for value "soledad.ar1@gmail.com" (type string) at path "_id" for model "users"
+[31merror[39m: No se pudo actualizar el usuario
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: Digest method not supported
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario 2
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Digest method not supported
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Digest method not supported
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "/" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Invalid status code: { message: 'Contraseña actualizada con exito' }
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "/" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Invalid status code: { message: 'Contraseña actualizada con exito' }
+[31merror[39m: Invalid status code: { message: 'Contraseña actualizada con exito' }
+[31merror[39m: Failed to lookup view "/" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: Failed to lookup view "forgotPassword" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: No recipients defined
+[31merror[39m: No recipients defined
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: error createProduct controller
+[31merror[39m: Campos incompletos
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: error createProduct controller
+[31merror[39m: product is not defined
+[31merror[39m: error createProduct controller
+[31merror[39m: product is not defined
+[31merror[39m: error createProduct controller
+[31merror[39m: product is not defined
+[31merror[39m: error createProduct controller
+[31merror[39m: product is not defined
+[31merror[39m: Error en manager createProduct
+[31merror[39m: error createProduct controller
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No tienes permisos para eliminar este producto
+[31merror[39m: paso por manager getProductById
+[31merror[39m: paso por manager getProductById
+[31merror[39m: No se pudo encontrar el producto
+[31merror[39m: error en manager getProductById
+[31merror[39m: Se produjo un error en getProductById controller
+[31merror[39m: No se pudo encontrar el producto
+[31merror[39m: error en manager getProductById
+[31merror[39m: Se produjo un error en getProductById controller No se pudo obtener el producto
+[31merror[39m: No se pudo encontrar el producto
+[31merror[39m: error en manager getProductById
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: Cannot read properties of undefined (reading 'role')
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: res.rendirect is not a function
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: res.rendirect is not a function
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "/" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Invalid status code: /
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "/" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-12-complementario\src\views"
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Failed to lookup view "/home" in views directory "C:\Users\54351\OneDrive\Desktop\back\Desafios-Node.j-Arguello-Soledad\desafio-13\src\views"
+[31merror[39m: products is not defined
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot read properties of undefined (reading 'send')
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getUserById
+[31merror[39m: El Usuario no se encuentra registrado
+[31merror[39m: error en manager getUserById
+[31merror[39m: El Usuario no se encuentra registrado
+[31merror[39m: error en manager getUserById
+[31merror[39m: El Usuario no se encuentra registrado
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Cannot read properties of undefined (reading 'error')
+[31merror[39m: Cannot set headers after they are sent to the client
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: Se produjo un error en createProduct controller:  Campos incompletos
+[31merror[39m: Campos incompletos
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `Categoria de prueba` is not a valid enum value for path `category`.
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: Error en manager createProduct:  products validation failed: category: `conjuntos` is not a valid enum value for path `category`.
+[31merror[39m: Se produjo un error en createProduct controller:  No se pudo crea el producto
+[31merror[39m: No se pudo crea el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error en manager getProductById:  Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31merror[39m: Se produjo un error en getProductById controller:  No se pudo obtener el producto
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error al iniciar sesion
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: Error al registrar el usuario
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error al iniciar sesion
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller
+[31merror[39m: error en manager getUserById
+[31merror[39m: error en manager getUserById
+[31merror[39m: Se produjo un error en uploaderUserDocuments controller

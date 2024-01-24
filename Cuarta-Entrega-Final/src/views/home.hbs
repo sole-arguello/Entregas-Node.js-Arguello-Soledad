@@ -1,0 +1,30 @@
+<section class="sectionHome">
+    <h1 class="titleList">Listado de Productos</h1>
+    <div >
+
+        {{#if userAdmin}}
+            <h2>Hola, <span class="userAdmin"> {{userFirst_name}}</span></h2>
+            <p>Sos <span class="rolAdmin" >{{userRole}}</span> de la pagina</p>
+            {{else}}
+            <h2>Hola, <span class="user">{{userFirst_name}} {{userLast_name}}</span></h2>
+            <p>Sos <span class="rolUser" >{{userRole}}</span>, Ya poder navegar por nuestro sitio!!</p>
+            
+        {{/if}}
+
+    </div>
+
+
+    <div class="container">
+        {{#each products}}
+            <div class="list">
+                <p>Imagen: {{this.thumbnail}}</p>
+                <p>Nombre Producto: {{this.title}}</p>
+                <p>Precio: {{this.price}}</p>
+                <p>Descripcion: {{this.description}}</p>
+                <p>Code: {{this.code}}</p>
+                <p>Stock: {{this.stock}}</p>
+                <p>Categoria: {{this.category}}</p>
+            </div>
+        {{/each}}
+    </div>
+</section>
